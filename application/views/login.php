@@ -43,7 +43,13 @@
                 </a>
 
               </div>
-            <h3 class=" text-center"> <strong class="text-primary ">ADUTAXE</strong></h3>
+           
+<div class="d-flex justify-content-center">
+
+              <span  class="text-center card-title" style=" color:#154360 ;"> <strong>Authentification</strong></span>
+            </div>
+
+           
             <p class="mb-4"></p>
             <form method="POST" action="<?php echo site_url('connexion/connexion');?>"  novalidate>
               <div class="form-group first">

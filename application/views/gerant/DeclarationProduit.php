@@ -90,9 +90,9 @@ $this->load->view('base/sidebar');?>
                   <tr>
                    <td><?php echo $row->natureProduit ?></td>
                     
-                    <td><input class="form-control" id="quantite" type="number" name="quantite<?= $row->codeCategorie;?>" value="<?= set_value('quantite'.$row->codeCategorie);?>"></td>
+                    <td><input class="form-control" id="quantite" type="number" name="quantite<?= $row->codeCategorie;?>" value="<?= set_value('quantite'.$row->codeCategorie);?>" step="0.01"></td>
                     <td><?php echo $row->uniteDeMesure ?></td>
-                    <td><input id="prix" class="form-control" type="number" name="prix<?= $row->codeCategorie;?>" value="<?= set_value('prix'.$row->codeCategorie);?>"></td>
+                    <td><input id="prix" class="form-control" type="number" name="prix<?= $row->codeCategorie;?>" value="<?= set_value('prix'.$row->codeCategorie);?>" step="0.01"></td>
                   
                     
                     

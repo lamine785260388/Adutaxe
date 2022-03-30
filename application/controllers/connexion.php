@@ -56,9 +56,10 @@ $config = array(
          array(
                 'field' => 'passe',
                 'label' => 'passe',
-                'rules' => 'required',
+                'rules' => 'required|min_length[8]',
                 'errors' => array(
                         'required' => 'Le %s est obligatoire .',
+						'min_length'=>'le mot de passe doit avoir minumum 8 caractéres'
                 ),
         ),
           array(
@@ -74,7 +75,7 @@ $config = array(
            array(
                 'field' => 'numero',
                 'label' => 'numero',
-                'rules' => 'required',
+                'rules' => 'required|exact_length[9]',
                 'errors' => array(
                         'required' => 'Le %s est obligatoire .',
 
