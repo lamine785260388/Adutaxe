@@ -1,11 +1,10 @@
   <!-- ======= Header ======= -->
   <header id="header" class="header fixed-top d-flex align-items-center ne_pas_imprimer">
-
-    <div class="d-flex align-items-center justify-content-between">
-      <a href="#" class="logo d-flex align-items-center">
-        <img src="<?php echo base_url('assets/assets/img/arriere.png');?>" alt="">
-        <span  style=" color:#154360 ;"> Adutax</span>
-      </a>
+  <div class="d-flex align-items-center justify-content-between">
+      <div class="logo d-flex align-items-center">
+        <img  width="55px" height="160px" src="<?php echo base_url('assets/assets/img/lokg.png');?>"  alt="">
+        <span  style=" color:#154360 ; text-decoration: none";> adutax</span>
+      </div>
       <i class="bi bi-list toggle-sidebar-btn"></i>
     </div><!-- End Logo -->
 
@@ -69,7 +68,7 @@
         <li class="nav-item dropdown pe-3">
 
           <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-            <img src="<?php echo base_url('assets/img/avatar.png');?>" alt="Profile" class="rounded-circle">
+            <img src="<?php echo base_url('assets/img/avatar.jpg');?>" alt="Profile" class="rounded-circle">
             <span class="d-none d-md-block dropdown-toggle ps-2">compte</span>
           </a><!-- End Profile Iamge Icon -->
 

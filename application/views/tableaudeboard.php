@@ -16,7 +16,7 @@ $this->load->view('base/sidebar');
 
                   <div class="d-flex align-items-center">
                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                      <i style="font-size: 30px;" class="bi bi-bank2 border-right"></i>
+                      <i style="font-size: 30px;" class="bi bi-shop border-right"></i>
                     </div>
                     <div class="ps-3">
                       

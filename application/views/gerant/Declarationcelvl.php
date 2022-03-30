@@ -37,19 +37,15 @@ $this->load->view('base/sidebar');?>
           
          <table> 
          <tr>   
+<tr>   
          <td>         
-      <img height='188px' width='530px'src="<?= base_url('assets/img/logo-adu.jpg');?>" class="rounded float-left" alt="..."></td><td></td>
-      <h4 class="rounded float-right">DGID-Ministere  des Finances </br>et du budget</h4>
-</td>
+      <img height="400px" width="500x"  src="<?= base_url('assets/img/logo-adu1.jpg');?>" class="rounded float-left img-fluid" alt="...">
+      </td>
+            <h4 class="rounded float-right m-3">DGID-Ministere des Finances </br>et du budget</h4>
+
+
 </tr>
-<tr class="h-90 align-items-center">
-
-<td></td>
-<td></td>
-<td></td>
-
-
-  <th class=" text-center" ><h5><strong>CEL SUR LA VALEUR LOCATIVE</strong></h5></th></tr>
+<tr class="h-100 align-items-center"><th></th> <th class="h-100 align-items-center" ><h5 class="text-center card-title">Contribution Economique Locale sur La valeur Locative </h5><h5 ><strong class="text-center p-1">Les informations personnelles du gérant</strong></h5></th></tr>
 <tr>
    <td> Prenom:<strong><?php echo " ".$prenom;?></strong></td>
    

@@ -18,21 +18,25 @@ $this->load->view('base/sidebar');?>
 
     <section class="section">
       <div class="row">
+        
        
 
 
-          <div class="card">
+    
+<div class="card">
             <div class="card-body">
-              <h5 class="card-title">Déclaration de Tva de produits Alimentaires</h5>
               
           
          <table> 
          <tr>   
-         <td>         
-      <img src="<?= base_url('assets/img/ddi.jpg');?>" class="rounded float-left" alt="..."></td><td></td>
-<img height="188px" width="268px" src="<?= base_url('assets/assets/img/arriere.png');?>" class="rounded float-right" alt="..."></td>
+       <td>         
+      <img height="400px" width="500x"  src="<?= base_url('assets/img/logo-adu1.jpg');?>" class="rounded float-left img-fluid" alt="...">
+      </td>
+            <h4 class="rounded float-right ">DGID-Ministére des Finances </br>et du budget</h4>
+
+
 </tr>
-<tr class="h-100 align-items-center"><th></th> <th class="h-100 align-items-center" ><h5 >Les informations personnels du gérant</h5></th></tr>
+<tr class="h-100 align-items-center"><th></th> <th class="h-100 align-items-center" ><h5 class="text-center card-title">Déclaration de Tva des produits alimentaires </h5><h5 ><strong class="text-center py-0">Les informations personnelles du gérant</strong></h5></th></tr>
 <tr>
    <td> Prenom:<strong><?php echo " ".$prenom;?></strong></td>
    

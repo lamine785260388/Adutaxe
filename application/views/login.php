@@ -16,7 +16,7 @@
     <!-- Style -->
     <link rel="stylesheet" href="<?= base_url('assets/newlog/css/style.css');?>">
 
-    <title>Login #2</title>
+    <title>ADUTAXE</title>
   </head>
   <body>
   
@@ -35,6 +35,14 @@
                <?= $erreur ;?>
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
               </div>    <?php };?> 
+              
+<div class="d-flex justify-content-center py-4">
+                <a href="index.html" class="logo d-flex align-items-center w-auto">
+                  <img src="<?php echo base_url('assets/assets/img/lokg.png');?>" width="100px" height="100px" alt="logo">
+
+                </a>
+
+              </div>
             <h3 class=" text-center"> <strong class="text-primary ">ADUTAXE</strong></h3>
             <p class="mb-4"></p>
             <form method="POST" action="<?php echo site_url('connexion/connexion');?>"  novalidate>
