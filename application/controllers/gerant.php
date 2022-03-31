@@ -336,6 +336,10 @@ $data["groupe"]="agent";
 
 		}
 		public function envoiemail(){
+			$user=$this->ion_auth->user()->row();
+			$message = $_POST['message'];
+			$objet = $_POST['objet'];
+			
 			 $config = [
                                             'protocol' => 'smtp',
                                             'smtp_host' => 'ssl://smtp.googlemail.com',
@@ -348,17 +352,17 @@ $data["groupe"]="agent";
                             $this->email->initialize($config);
                             $this->load->helpers('url');
                             $this->email->set_newline("\r\n");
-                                 $identity = $this->input->post('identity');
-                            $this->email->from('adutaxe!');
-                            $this->email->to($identity);
-                            $this->email->subject("forgot password");
+                                 $identity = $this->input->post($user->email);
+                            $this->email->from($user->email);
+                            $this->email->to("lamine785260388@gmail.com");
+                            $this->email->subject($objet);
                            
-                            $this->email->message("message");
+                            $this->email->message($message);
 
                             if ($this->email->send()) {
 
                                 $this->session->set_flashdata('success','Email Send sucessfully');
-                                return redirect('users/acceuil');
+                               // return redirect('users/acceuil');
                             } 
 		}
       

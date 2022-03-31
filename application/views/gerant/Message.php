@@ -4,7 +4,7 @@ $this->load->view('base/sidebar');?>
  <main id="main" class="main">
   <div class="container-fluide">
  <div class="item form-group">
-  <form method="POST" action="gerant/envoiemail">
+  <form method="POST" action="<?= site_url('gerant/envoiemail');?>">
                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="objet">Objet <span class="required">*</span>
                 </label>
                 <div class="col-md-8 col-sm-8 col-xs-12">
@@ -26,14 +26,14 @@ $this->load->view('base/sidebar');?>
                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="contenu">Votre message <span class="required">*</span>
                 </label>
                 <div class="col-md-8 col-sm-8 col-xs-12">
-                  <textarea id="contenu" required="required" data-validate-length-range="1,500" placeholder="500 caractères au maximum" name="contenu" rows="18" maxlength="500" class="form-control col-md-7 col-xs-12"></textarea>
+                  <textarea name="message" id="contenu" required="required" data-validate-length-range="1,500" placeholder="500 caractères au maximum" name="contenu" rows="18" maxlength="500" class="form-control col-md-7 col-xs-12"></textarea>
                 </div>
               </div>
               <div class="ln_solid"></div>
               <div class="form-group">
                 <div class="col-md-6 col-md-offset-3">
                   <button type="reset" class="btn btn-primary">Annuler</button>
-                  <button id="send" class="btn btn-success">Valider</button>
+                  <button type="submit" class="btn btn-success">Valider</button>
                 </div>
               </div>
             </form>
