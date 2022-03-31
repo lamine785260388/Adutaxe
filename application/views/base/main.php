@@ -239,7 +239,7 @@
                     </div>
 
                     <div class="text-center">
-                      <label class="text-danger" > une fois valider le changement sera automatique et vous serez rediriger<br> a la page de connexion</label>
+                      <label class="text-danger" > une fois valider le changement sera automatique et vous serez rediriger<br> a la page de connexion</label><br>
                       <button type="submit" class="btn btn-primary">changer mot de passe</button>
                     </div>
                   </form><!-- End Change Password Form -->

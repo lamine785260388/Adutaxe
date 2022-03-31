@@ -53,12 +53,12 @@
             <p class="mb-4"></p>
             <form method="POST" action="<?php echo site_url('connexion/connexion');?>"  novalidate>
               <div class="form-group first">
-                <label for="username">Username</label>
+                <label for="username">Email</label>
               <input type="text" name="identifiant" class="form-control" id="yourUsername" placeholder=" email" required>
                <div class="invalid-feedback">donner votre email svp!</div>
               </div>
               <div class="form-group last mb-3">
-                <label for="password">Password</label>
+                <label for="password">Mot de passe</label>
                <input type="password" name="passe" class="form-control" id="yourPassword" placeholder="mot de passe" required>
                       <div class="invalid-feedback">votre mot de passe svp!</div>
               </div>

@@ -12,25 +12,31 @@ $this->load->view('base/sidebar');?>
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Information</h1>
+      <h1></h1>
       
     </div><!-- End Page Title -->
 
     <section class="section">
       <div class="row">
+        
        
 
 
-          <div class="card">
+    
+<div class="card">
             <div class="card-body">
-              <h5 class="card-title">Déclaration de Tva de produits Tabacs!</h5>
-                  <table> 
+              
+          
+         <table> 
          <tr>   
-         <td>         
-      <img src="<?= base_url('assets/img/ddi.jpg');?>" class="rounded float-left" alt="..."></td><td></td>
-<img height="188px" width="268px" src="<?= base_url('assets/assets/img/arriere.png');?>" class="rounded float-right" alt="..."></td>
+       <td>         
+      <img height="400px" width="500x"  src="<?= base_url('assets/img/logo-adu1.jpg');?>" class="rounded float-left img-fluid" alt="...">
+      </td>
+            <h4 class="rounded float-right ">DGID-Ministére des Finances </br>et du budget</h4>
+
+
 </tr>
-<tr class="h-100 align-items-center"><th></th> <th class="h-100 align-items-center" ><h5 >Les informations personnels du gérant</h5></th></tr>
+<tr class="h-100 align-items-center"><th></th> <th class="h-100 align-items-center" ><h5 class="text-center card-title">Déclaration de Tva des produits Tabac </h5><h5 ><strong class="text-center py-0">Les informations personnelles du gérant</strong></h5></th></tr>
 <tr>
    <td> Prenom:<strong><?php echo " ".$prenom;?></strong></td>
    
@@ -44,10 +50,10 @@ $this->load->view('base/sidebar');?>
     </tr>
     <tr><td>Email:<strong><?php echo " ".$email;?></strong></td></tr>
     <tr>  <td class="align-item:right;">telephone:<strong><?php echo " ".$tel;?></strong> </td></tr>
-    <tr><td></td> <td colspan="3" > <h6>J'atteste que tous les informations fournies dans ce formulaire et ses annexes, le cas échéan, sont complétes et éxactes </h6></td></tr>
+    <tr><td></td> <td colspan="3" > <h6>J'atteste que tous les informations fournis dans ce formulaire et ses annexes, le cas échéan, sont complétent et éxactes </h6></td></tr>
+<tr><td></td></tr>
 
-
-       </table><br><br>
+       </table>
              
               <!-- Active Table -->
               <table  class="table table-borderless">

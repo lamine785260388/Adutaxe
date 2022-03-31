@@ -1,7 +1,11 @@
  
 <?php $this->load->view('base/header');
 $this->load->view('base/navbar');
-$this->load->view('base/sidebar'); ?>
+$this->load->view('base/sidebar');
+foreach($document->result() as $row){
+  $doc=$row->DocumentAdministrative;
+} 
+?>
 
   <main id="main" class="main">
 
@@ -68,7 +72,7 @@ $this->load->view('base/sidebar'); ?>
                    <td><a title="Consultation" href="<?= site_url('produit/facturation/').$row->idInfrastructure.'/agent/'.$row->Date."/".$row->type;?>">consulter</a></td>
 
                    </tr>
-                 <?php $doc=$row->DocumentAdministrative;};?>
+                 <?php };?>
                   <?php $total=0;$totalvente=0;
 
    foreach ($declarationcelvl->result() as $row){ ?>

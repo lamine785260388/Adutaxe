@@ -12,7 +12,7 @@ $this->load->view('base/sidebar');?>
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Déclaration de Tva de produits Alcooliques</h1>
+      <h1></h1>
       
     </div><!-- End Page Title -->
 
@@ -24,13 +24,17 @@ $this->load->view('base/sidebar');?>
 
           <div class="card">
             <div class="card-body">
-                  <table> 
+            <table> 
          <tr>   
+<tr>   
          <td>         
-      <img src="<?= base_url('assets/img/ddi.jpg');?>" class="rounded float-left" alt="..."></td><td></td>
-<img height="188px" width="268px" src="<?= base_url('assets/assets/img/arriere.png');?>" class="rounded float-right" alt="..."></td>
+      <img height="400px" width="500x"  src="<?= base_url('assets/img/logo-adu1.jpg');?>" class="rounded float-left img-fluid" alt="...">
+      </td>
+            <h4 class="rounded float-right m-3">DGID-Ministere des Finances </br>et du budget</h4>
+
+
 </tr>
-<tr class="h-100 align-items-center"><th></th> <th class="h-100 align-items-center" ><h5 >Les informations personnelles du gérant</h5></th></tr>
+<tr class="h-100 align-items-center"><th></th> <th class="h-100 align-items-center" ><h5 class="text-center card-title">Déclaration de produit alcoolique </h5><h5 ><strong class="text-center p-1">Les informations personnelles du gérant</strong></h5></th></tr>
 <tr>
    <td> Prenom:<strong><?php echo " ".$prenom;?></strong></td>
    
@@ -44,8 +48,9 @@ $this->load->view('base/sidebar');?>
     </tr>
     <tr><td>Email:<strong><?php echo " ".$email;?></strong></td></tr>
     <tr>  <td class="align-item:right;">telephone:<strong><?php echo " ".$tel;?></strong> </td></tr>
-    <tr><td></td> <td colspan="3" > <h6>J'atteste que tous les informations fournis dans ce formulaire et ses annexes, le cas échéan, sont complétent et éxactes </h6></td></tr>
+    <tr><td></td> <td colspan="3" > <h6>J'atteste que tous les informations fournies dans ce formulaire et ses annexes, le cas échéant, sont complétes et éxactes </h6></td></tr>
 <tr><td></td></tr>
+
        </table>
               
              

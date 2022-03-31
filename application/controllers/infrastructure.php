@@ -198,6 +198,7 @@ class infrastructure extends My_controller
 		 $this->load->view('base/main',$data,true);
 		 $data["Alimentaires"]=$this->md->voirDeclarationinf($inf);//pour voir la déclarartion
 		 $data["declarationcelvl"]=$this->md->voirDeclarationcelvl($inf);
+		 $data["document"]=$this->md->selectcon("infrastructuremarchande","idInfrastructure",$inf);
 		
 		 $this->load->view("infrastructure/voirDeclaration",$data);
 

@@ -12,7 +12,7 @@ $this->load->view('base/sidebar');?>
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Déclaration de Tva de produits Alimentaires</h1>
+      <h1></h1>
       
     </div><!-- End Page Title -->
 

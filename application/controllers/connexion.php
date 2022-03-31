@@ -82,8 +82,8 @@ $config = array(
                         
 
                 ),
-        ),
-
+                ),
+        
     
       
         array(
@@ -184,12 +184,14 @@ $id = $users->id;
 
 		}
 		else{
-			echo "<script> alert('votre mot de passe actuel est incorrect')</script>";
-			
+			$this->session->set_flashdata('message','Veuillez vérifier votre mot de passe actuel'); ;
+
+		redirect('users/acceuil');
 		}
 	}
 	else{
 		$this->session->set_flashdata('message','vos mot de passe doivent avoir 8 caracteres et correspondre') ;
+		redirect('users/acceuil');
 
 	}
 }
