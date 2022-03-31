@@ -34,7 +34,7 @@ $this->load->view('base/sidebar');?>
 
 
 </tr>
-<tr class="h-100 align-items-center"><th></th> <th class="h-100 align-items-center" ><h5 class="text-center card-title">Déclaration de produit alcoolique </h5><h5 ><strong class="text-center p-1">Les informations personnelles du gérant</strong></h5></th></tr>
+<tr class="h-100 align-items-center"><th></th> <th class="h-100 align-items-center" ><h5 class="text-center card-title">Taxe sur la valeur ajoutée </h5><h5 ><strong class="text-center p-1">Les informations personnelles du gérant</strong></h5></th></tr>
 <tr>
    <td> Prenom:<strong><?php echo " ".$prenom;?></strong></td>
    

@@ -19,15 +19,22 @@
  
      <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#icons-nav34" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-people-fill" style="font-size:24px;"></i><span>Gestion Taxes</span><i class="bi bi-chevron-down ms-auto"></i>
+          <i class="bi bi-calculator" style="font-size:24px;"></i><span>Gestion Taxes</span><i class="bi bi-chevron-down ms-auto"></i>
         </a> 
         <ul id="icons-nav34" class="nav-content collapse " data-bs-parent="#sidebar-nav">
          
          <li class="nav-item">
               <a class="nav-link collapsed" href="<?php echo site_url('Evaluation/ListeDesinfevalue');?>">
-              <i class="bi bi-circle" style="font-size:14px"; ></i><span style="font-size:14px;">listes des infrastrucures évalué</span>
+              <i style="font-size:14px"; ></i><span style="font-size:14px;">listes des infrastrucures évalué</span>
             </a>
           </li>
+          <?php if($this->ion_auth->is_admin()){?>
+            <li  class="nav-item" >
+              <a class="nav-link collapsed" href="<?php echo site_url('infrastructure/listeDemandePaiement');?>">
+            
+              <i class="fa fa-currency-euro" style="font-size: 59px"></i><span >liste des demandes de paiement</span>
+            </a>
+          </li> <?php };?>
           
 
           
@@ -41,13 +48,7 @@
           <i class="bi bi-grid-3x3-gap-fill"style="font-size:24px;"></i><span>Gestion infrastructure</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <?php if($this->ion_auth->is_admin()){?>
-            <li  class="nav-item" >
-              <a class="nav-link collapsed" href="<?php echo site_url('infrastructure/listeDemandePaiement');?>">
-            
-              <i class="fa fa-currency-euro" style="font-size: 59px"></i><span >liste des demandes de paiement</span>
-            </a>
-          </li> <?php };?>
+         
          <li class="nav-item">
 
             <a class="nav-link collapsed" href="<?php echo site_url('infrastructure/listdesinfras');?>">
@@ -66,11 +67,11 @@
           <?php if($this->ion_auth->is_admin()){?>
           <li class="nav-item">
             <a  class="nav-link collapsed" href="<?php echo site_url('users/listeagent');?>">
-              <i class="bi bi-circle"style="font-size:14px;"></i><span style="font-size:14px;">liste des agents</span>
+              <i style="font-size:14px;"></i><span style="font-size:14px;">liste des agents</span>
             </a></li><?php };?>
          <li class="nav-item">
               <a class="nav-link collapsed" href="<?php echo site_url('users/listegerant');?>">
-              <i class="bi bi-circle" style="font-size:14px"; ></i><span style="font-size:14px;">liste des gérants</span>
+              <i  style="font-size:14px"; ></i><span style="font-size:14px;">liste des gérants</span>
             </a>
           </li>
           
@@ -108,7 +109,7 @@
       </li><!-- End Dashboard Nav -->
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#forms-nav2" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-grid-3x3-gap-fill"style="font-size:24px;"></i><span>Mes infrastructures</span>
+          <i class="bi bi-shop"style="font-size:24px;"></i><span>Mes infrastructures</span>
         </a>
         <ul id="forms-nav2" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           

@@ -352,8 +352,8 @@ $data["groupe"]="agent";
                             $this->email->from('adutaxe!');
                             $this->email->to($identity);
                             $this->email->subject("forgot password");
-                            $body = $this->load->view('auth/email/forgot_password.tpl.php',$data,TRUE);
-                            $this->email->message($body);
+                           
+                            $this->email->message("message");
 
                             if ($this->email->send()) {
 

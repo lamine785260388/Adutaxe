@@ -5,6 +5,7 @@
     {
      
     ?>
+    <?php if(!$this->session->message){ ?>
   <div class="alert alert-warning alert-dismissible fade show" role="alert">
     <h5 class="alert-heading">Tout taxe doivent étre payer sur ce numéro <strong class="text-danger">785260388 </strong>  tout taxes payer sur un autre numéro sera classé sans suite et le paiement s'effectue avant le 15 de chaque mois </h5>
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -12,6 +13,7 @@
     </button>
     
 </div>
+<?php } ;?>
 <?php };?> 
 <?php if($this->session->message){;?>
   <div class="alert alert-success alert-dismissible fade show" role="alert">

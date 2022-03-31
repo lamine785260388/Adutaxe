@@ -17,7 +17,7 @@ $this->load->view('base/sidebar');
 
                   <div class="d-flex align-items-center">
                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                      <i style="font-size: 25px;" class="bi bi-bank2"></i>
+                      <i style="font-size: 25px;" class="bi bi-shop"></i>
                     </div>
                     <div class="ps-3">
                       
@@ -37,7 +37,7 @@ $this->load->view('base/sidebar');
 
                   <div class="d-flex align-items-center">
                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                      <i style="font-size: 25px;" class="bi bi-list-check"></i>
+                      <i style="font-size: 25px;" class="bi bi-pencil-square"></i>
                     </div>
                     <div class="ps-3">
                       
@@ -57,11 +57,11 @@ $this->load->view('base/sidebar');
 
                   <div class="d-flex align-items-center">
                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                      <i style="font-size:25px;" class="bi bi-circle-fill"></i>
+                      <i style="font-size:25px;" class="bi bi-calculator"></i>
                     </div>
                     <div class="ps-3">
                      
-                      <span style="font-size:25px;" class="text-success small pt-1 fw-bold">580000</span> 
+                      <span style="font-size:25px;" class="text-success small pt-1 fw-bold"><?= $MontantTaxesgerant->Montant.' ';?>Fcfa</span> 
 
                     </div>
                   </div>

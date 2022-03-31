@@ -20,6 +20,7 @@ class Users extends My_controller
 	
 	public function acceuil()
 	{
+		
 			$mes=$this->ion_auth->user()->row();
 		
 
@@ -121,14 +122,21 @@ else
      		$data["titre"]="gerant";
 		$users=$this->ion_auth->user()->row();
 		$data["groupe"]="gerant";
+		$nombreDeclarationselv=$this->md->nombredeDeccel($users->id);
+		$nombreDeclarationsel=0;
+foreach($nombreDeclarationselv->result() as $row){
+$nombreDeclarationsel++;
+}
 		$nombreDeclaration=$this->md->nombredeDec($users->id);
-			$data["nombreDeclaration"]=0;
+			$data["nombreDeclaration"]=$nombreDeclarationsel;
 foreach($nombreDeclaration->result() as $row){
 	$data["nombreDeclaration"]++;
 }
 		$data["nombreinf"]=$this->md->nombreInfrastructuregerant($users->id);
 		$data["nombreDemandePaiement"]=$this->md->nombreDemandePaiement();
 		 $this->load->view('base/navbar',$data,true);
+		 $data["MontantTaxesgerant"]=$this->md->MontantTaxesgerant($users->id)->row();
+		
 		 $this->load->view('base/main',$data,true);
      	$this->load->view('gerant/tableauDeBoard',$data);
      }

@@ -12,6 +12,7 @@ class redirect extends My_controller
 		
 	}
 	public function login(){
+		$this->session->set_flashdata('messageinfo','Tout Taxe doit  être payer sur le 785260388, Tout taxe payé avec un autre numéro sera classé sans suite') ;
 		$data["erreur"]="";
 $this->load->view("login",$data);
 	}

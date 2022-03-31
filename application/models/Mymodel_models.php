@@ -453,6 +453,28 @@ public function montant_taxe($etat){
 	$this -> db ->where ( 'status' ,  $etat );
  return $query = $this->db->get('facture'); 
 }
+public function nombredeDeccel($id){
+	$this -> db -> select ( '*' ); 
+$this -> db -> from ( 'infrastructuremarchande' ); 
+$this -> db -> join ( 'declarationselvl' ,  'declarationselvl.idinfrastructure=infrastructuremarchande.idInfrastructure' );
+$this -> db -> join ( 'users' ,  'users.id=infrastructuremarchande.id' );
+$this->db->where("users.id",$id);
+$this->db->group_by("Date");
+return $query= $this->db->get();
+
+//select *from infrastructuremarchande,produit,users where infrastructuremarchande.id=users.id and produit.idInfrastructure=infrastructuremarchande.idInfrastructure GROUP by type
+}
+public function MontantTaxesgerant($id){
+	$this->db->select_sum('Montant');
+	$this->db->from('facture');
+	$this->db->join("infrastructuremarchande","facture.idinfrastructure=infrastructuremarchande.idinfrastructure") ;
+	$this -> db ->where ( 'status' ,  "paye" );
+	$this -> db ->where ( 'infrastructuremarchande.id' ,  $id );
+
+ return $query = $this->db->get(); 
+
+	//SELECT SUM(Montant) FROM facture WHERE status="paye" and facture.id=890516
+}
 
 }
 ?>

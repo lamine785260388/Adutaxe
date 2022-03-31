@@ -75,11 +75,11 @@ $this->load->view('base/sidebar');
      <div class="card">
           
           <div class="card-body">
-                            <h5 class="card-title">Total des taxes payés</h5>
+                            <h5 class="card-title">Montant Total des taxes</h5>
 
                   <div class="d-flex align-items-center">
                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                      <i style="font-size:25px;" class="bi bi-circle-fill"></i>
+                      <i style="font-size:25px;" class="bi bi-calculator"></i>
                     </div>
                     <div class="ps-3">
                      
@@ -91,26 +91,7 @@ $this->load->view('base/sidebar');
 
               </div>
     </div>
-     <div class="col-4">
-     <div class="card">
-          
-          <div class="card-body">
-                            <h5 class="card-title">Total taxes non réglé</h5>
-
-                  <div class="d-flex align-items-center">
-                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                      <i style="font-size:25px;" class="bi bi-circle-fill"></i>
-                    </div>
-                    <div class="ps-3">
-                     
-                      <span style="font-size:25px;" class="text-success small pt-1 fw-bold"><?= $montant_taxeNonRegle;?>Fcfa</span> 
-
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-    </div>
+ 
      
      
       </div>
