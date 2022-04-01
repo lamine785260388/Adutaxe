@@ -48,10 +48,10 @@ $this->load->view('base/sidebar');?>
                   </tr>
                  
                 </thead>
-                <tbody>
+                <tbody id="lessonList">
                   <?php $i=1;   foreach ($users as $row ) {
      ?>
-                  <tr>
+                  <tr class="col-12" >
                    <td><?php echo $i;$i++;  ?></td>
                     <td> <?php echo $row->id ?></</td>
                     <td><?php echo $row->first_name  ?></td>
@@ -100,6 +100,14 @@ $this->load->view('base/sidebar');?>
       function confirmation(){
         return confirm("Voulez vous désactiver cette compte d'utilisateur");
       }
+      $(document).ready(function(){
+       $("#searchInput").on("keyup", function() {
+          var value = $(this).val().toLowerCase();
+          $("#lessonList .col-12").filter(function() {
+             $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+          });
+       });
+    });
     </script>
 
   </main><!-- End #main -->

@@ -40,19 +40,19 @@ $this->load->view('base/sidebar');?>
                     <th scope="col">adresse</th>
                     <th scope="col">genre</th>
                    
-                     <th scope="col">Action</th>
                   </tr>
                  
                 </thead>
-                <tbody>
+                <tbody id="lessonList">
                   <?php $num=1;  foreach ($infras->result() as $row ) {
      ?>
-                  <tr>
+                  <tr class="col-12">
                     <td> <?php echo $num;$num++; ?></</td>
                    
                     <td><?php echo $row->nomInfrastructure ?></td>
                     <td><?php echo $row->adresse ?></td>
                     <td><?php echo $row->genre ?></td>
+                   
                     
        
                       
@@ -83,7 +83,7 @@ $this->load->view('base/sidebar');?>
                     <div class="modal-header">
                       <div class="pt-4 pb-2">
                     <h5 class="card-title text-center pb-1 fs-0"><i class="bi bi-bank2"></i>
-            </a>Ajout d'une infrastructure</h5>
+            </a>Modifier infrastructure</h5>
                     
                   </div>
                      
@@ -252,6 +252,7 @@ $this->load->view('base/sidebar');?>
                   </div>
                 </div>
               </div><!-- End modif Modal-->
+              
   </main><!-- End #main -->
 
  <?php $this->load->view('base/footer'); ?> 
@@ -287,7 +288,14 @@ alert(userid.idInfrastructure)
 })
 }
 
-
+$(document).ready(function(){
+       $("#searchInput").on("keyup", function() {
+          var value = $(this).val().toLowerCase();
+          $("#lessonList .col-12").filter(function() {
+             $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+          });
+       });
+    });
 
 
 

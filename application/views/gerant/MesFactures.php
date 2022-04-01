@@ -79,10 +79,7 @@ $this->load->view('base/sidebar'); ?>
                  
 
                 </tbody>
-                    <tr>
-                  <td></td>
-               
-                    </td> <td colspan="4"> <a class="btn btn-primary  w-50" href="<?= site_url('users/tableaudeboard')?>">imprimer</a></td></tr>
+                    
 
               </form>
               </table>

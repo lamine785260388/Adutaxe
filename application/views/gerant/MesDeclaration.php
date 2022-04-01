@@ -50,14 +50,14 @@ $this->load->view('base/sidebar'); ?>
                 <form name ="form" class="row g-3 needs-validation" method="POST" action="<?= site_url('demande/demandeDepaiement');?>"> 
                   
 
-                <tbody> 
+                <tbody id="lessonList"> 
 
                     
    <?php 
 
    foreach ($Alimentaires->result() as $row){ ?>
 
-                  <tr>
+                  <tr class="col-12">
                    <td>TVA:<?= " ".$row->type;?></td>
                    <td><?= $row->nomInfrastructure;?></td>
                    <td><?= $row->Date;?></td>
@@ -69,7 +69,7 @@ $this->load->view('base/sidebar'); ?>
                   <?php 
 
    foreach ($declarationcelvl->result() as $row){ ?>
-    <tr>
+    <tr class="col-12">
                  <td>CEL_VL</td>
                    <td><?= $row->nomInfrastructure;?></td>
                    <td><?= $row->Date;?></td>
@@ -107,6 +107,16 @@ $this->load->view('base/sidebar'); ?>
         </div>
       </div>
     </section>
+    <script>
+            $(document).ready(function(){
+       $("#searchInput").on("keyup", function() {
+          var value = $(this).val().toLowerCase();
+          $("#lessonList .col-12").filter(function() {
+             $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+          });
+       });
+    });
+    </script>
 
   </main><!-- End #main -->
 
