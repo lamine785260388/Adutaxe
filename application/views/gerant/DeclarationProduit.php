@@ -36,7 +36,7 @@ $this->load->view('base/sidebar');?>
 
 
 </tr>
-<tr class="h-100 align-items-center"><th></th> <th class="h-100 align-items-center" ><h5 class="text-center card-title">Taxe sur la valeur ajoutée </h5><h5 ><strong class="text-center py-0">Les informations personnelles du gérant</strong></h5></th></tr>
+<tr class="h-100 align-items-center"><th></th> <th class="h-100 align-items-center" ><h5 class="text-center card-title">Déclaration de tva des produits alimentaires </h5><h5 ><strong class="text-center py-0">Les informations personnelles du gérant</strong></h5></th></tr>
 <tr>
    <td> Prenom:<strong><?php echo " ".$prenom;?></strong></td>
    
@@ -50,7 +50,7 @@ $this->load->view('base/sidebar');?>
     </tr>
     <tr><td>Email:<strong><?php echo " ".$email;?></strong></td></tr>
     <tr>  <td class="align-item:right;">telephone:<strong><?php echo " ".$tel;?></strong> </td></tr>
-    <tr><td></td> <td colspan="3" > <h6>J'atteste que tous les informations fournis dans ce formulaire et ses annexes, le cas échéan, sont complétent et éxactes </h6></td></tr>
+    <tr><td></td> <td colspan="3" > <h6>J'atteste que toutes les informations fournies dans ce formulaire et ses annexes, le cas échéant, sont complétes et éxactes </h6></td></tr>
 <tr><td></td></tr>
 
        </table>

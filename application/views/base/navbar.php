@@ -99,7 +99,9 @@
             <li>
               <a class="dropdown-item d-flex align-items-center" href="<?= site_url('gerant/message/Aide');?>">
                 <i class="bi bi-question-circle"></i>
+                
                 <span>Besoin d'aide?</span>
+              
               </a>
             </li>
             <li>

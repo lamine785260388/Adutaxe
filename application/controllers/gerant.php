@@ -141,9 +141,14 @@ class gerant extends My_controller
 		
         	$data["object"]=$object;
         	$data["user"]=$this->ion_auth->user()->row();
-        	$data["titre"]="gerant";
+			if ($this->ion_auth->in_group("gerant")){
+				$data["groupe"]="gerant";
+        	$data["titre"]="gerant";}
+			if($this->ion_auth->in_group("agent") || $this->ion_auth->is_admin()){
+				$data["titre"]="agent";	$data["groupe"]="agent";
+			}
 		$data["b"]="lamine";
-		$data["groupe"]="gerant";
+		
 		$data["nombreinf"]=0;
 		$data["object"]=$object;
         	$this->load->view("gerant/message",$data);
@@ -286,6 +291,10 @@ public function MesPaiement(){
 		 $data["MesPaiement"]=$this->md->MesPaiement($id);
 		
         	$this->load->view("gerant/MesPaiement",$data);}
+			else{
+				$data["erreur"]="vous n'avez pas accés a cette page c'est pour les gérants";
+			$this->load->view("erreur/erreur",$data);
+			}
 }
 public function paie($numfact){
 	$infofact=$this->md->selectcon("facture","id",$numfact);

@@ -34,7 +34,14 @@
             
               <i class="fa fa-currency-euro" style="font-size: 59px"></i><span >liste des demandes de paiement</span>
             </a>
-          </li> <?php };?>
+          </li>
+          <li  class="nav-item" >
+              <a class="nav-link collapsed" href="<?php echo site_url('infrastructure/paiementvalide');?>">
+            
+              <i class="fa fa-currency-euro" style="font-size: 59px"></i><span >Paiement validé</span>
+            </a>
+          </li>
+           <?php };?>
           
 
           

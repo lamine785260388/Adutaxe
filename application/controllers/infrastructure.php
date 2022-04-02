@@ -239,6 +239,28 @@ public function tests(){
 {
 	echo "suis la";
 }
+public function paiementvalide(){
+if($this->ion_auth->is_admin()){
+	$data["user"]=$this->ion_auth->user()->row();
+	$iduser=$this->ion_auth->user()->row();
+	$id=$iduser->id;
+
+
+		$data["titre"]="agent";
+$data["groupe"]="agent";
+$data["nombreinf"]=0;
+ $this->load->view('base/main',$data,true);
+ $data["MesPaiement"]=$this->md->selectcon("paiement","etat","paye");
+
+	$this->load->view("agent/paiementvalide",$data);
+
+	
+}
+else{
+	$data["erreur"]="vs n'avez pas accés a cette page";
+	$this->load->view("erreur/erreur",$data);
+}
+}
 
 }
 ?>

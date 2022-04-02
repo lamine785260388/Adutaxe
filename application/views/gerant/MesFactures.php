@@ -58,14 +58,14 @@ $this->load->view('base/sidebar'); ?>
                 <form name ="form" class="row g-3 needs-validation" method="POST" action="<?= site_url('demande/demandeDepaiement');?>"> 
                   
 
-                <tbody> 
+                <tbody id="lessonList"> 
 
                     
    <?php 
 
    foreach ($MesFactures->result() as $row){ ?>
 
-                  <tr>
+                  <tr class="col-12">
                    <td><?= $row->id;?></td>
                    <td><?= $row->nomInfrastructure;?></td>
                    <td><?= $row->date;?></td>
@@ -107,7 +107,17 @@ $this->load->view('base/sidebar'); ?>
         </div>
       </div>
     </section>
-
+    <script type="text/javascript">
+  
+  $(document).ready(function(){
+     $("#searchInput").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $("#lessonList .col-12").filter(function() {
+           $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+     });
+  }); 
+  </script>
   </main><!-- End #main -->
 
   <?php $this->load->view('base/footer');  ?>

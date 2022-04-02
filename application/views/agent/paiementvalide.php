@@ -26,7 +26,7 @@ $this->load->view('base/sidebar'); ?>
           <div class="card">
           
             <div class="card-body">
-              <h1 class="card-title text-center">MES PAIEMENTS</h1>
+              <h1 class="card-title text-center">PAIEMENTS VALIDES</h1>
 
               
              
@@ -39,7 +39,7 @@ $this->load->view('base/sidebar'); ?>
                   <tr style="background-color: #154360; color: white;">
                         <th scope="col">Numéro Facture</th>
                   
-                       <th scope="col">Nom infrastructure</th>
+                       <th scope="col">Numéro Infrastructure</th>
                    
                     <th scope="col">Date</th>
                     <th scope="col">Mode de paiement</th>
@@ -69,7 +69,7 @@ $this->load->view('base/sidebar'); ?>
 
                   <tr class="col-12">
                    <td><?= $row->NumFacture;?></td>
-                   <td><?= $row->nomInfrastructure;?></td>
+                   <td><?= $row->idinfrastructure;?></td>
                    <td><?= $row->datePaiement;?></td>
                    <td><?= $row->typePaiement;?></td>
                     <td><?= $row->Montant;?></td>
