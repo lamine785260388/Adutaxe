@@ -16,26 +16,42 @@ $this->load->view('base/sidebar');
       
     </div><!-- End Page Title -->
 
+   
+
+
     <section class="section">
       <div class="row">
        
-
-     
-          <div class="card" id="imprimer">
-            <table> <br>
-             
-                 <tr>   
-         <td>         
-      <img height='188px' width='530px'src="<?= base_url('assets/img/logo-adu.jpg');?>" class="rounded float-left" alt="..."></td><td></td>
-      
-</td>
-</tr></table>
+         <div class="card" id="imprimer">
             <div class="card-body">
-              <h1 class="card-title text-center">Facture Alcool N°<strong><?= $numfac ;?></strong> </h1>
+          
+         <table> 
+           <tr>   
+         <td>         
+      <img height="400px" width="500px"  src="<?= base_url('assets/img/logo-adu1.jpg');?>" class="rounded float-left img-fluid" alt="..."><td></td>
+      </td>
+            <h4 class="rounded float-right m-3 ">DGID-Ministere des Finances </br>et du budget</h4>
+
+
+</tr>
+<tr class="h-100 align-items-center"><th></th> <th class="h-100 align-items-center" ><h5 class="text-center card-title"> </h5><h5 ><strong class="text-center "></strong></h5></th></tr>
+<tr>
+         <tr>   
+       <td>         
+     
+
+
+</tr>
+<tr class="h-100 align-items-center"><th></th> <th class="" ><h5 class="text-center card-title">Déclaration de Tva des produits alcooliques </h5>
+             <h5 ><strong >Les informations personnelles du gérant</strong></h5><br>
+             <h4>-----------------------------------<h4>
+              <h3> N°&nbsp;facture&nbsp;<?=$numfac;?><h3>
+</tr>
+        </table>
                <?php
                
                $group="gerant"; if ($this->ion_auth->in_group($group)){
-                echo "<span class='text-success'>Vos Informations personnelle</span></br>";
+                 
                } else{
                 
                } 
@@ -46,14 +62,31 @@ $this->load->view('base/sidebar');
                   $add=$row->adresse;
                   $id=$row->idInfrastructure;
                   $datefact=$row->Date;
+                  $email=$row->email;
+                  $numfac=$row->id;
                  }
                   ?>
-                  <span> Prenom gérant:<?= $prenom."   " ;?></span><br>
-                   <span>Nom Gérant:<?= $nom;?></span><br>
-                   <span>Nom Infrastructure:<?= $nominf;?></span><br>
-                   <span>AddresseInfrastructure:<?= $add;?></span><br>
-                    <span>Date facture:<?= $datefact;?></span><br>
-                    <span>NumeroFacture<?= $numfac ;?></span>
+                         <table  class="table table-borderless py-1">
+
+                  <tr>
+                    <td><span> <strong>Prenom gérant</strong>:<?= $prenom."   " ;?></span></td>
+                    <td><span class="rounded float-right"><strong>Nom de l'infrastructure</strong>:<?= $nominf;?></span></td>
+                  </tr>
+                  <tr>
+
+                    <td><span ><strong>Nom gérant</strong>:<?= $nom;?></span></td>
+                    <td><span class="rounded float-right"><strong>adresse de l'nfrastructure</strong>:<?= $add;?></span></td><br>
+
+
+
+                  </tr>
+                  <tr>
+                    <td><span class=""><strong>Email</strong>:<?= $email;?></span></td>
+                    <td><span class="rounded float-right"><strong>Date facture</strong>:<?= $datefact;?></span></td>
+                    <tr><td></td> <td colspan="3" > <h6>J'atteste que toutes les informations fournies dans ce formulaire et ses annexes, <br>le cas échéant, sont complétes et éxactes </h6></td></tr>
+
+                  </tr>
+                           </table>
              
               <!-- Active Table -->
               <table  class="table table-striped">

@@ -106,8 +106,8 @@ $this->load->view('base/sidebar');?>
                     <option value="<?= $row->idInfrastructure;?>"><?php echo $row->nomInfrastructure." :".$row->adresse ;?></option>
                   <?php };?>
                   </select></td> </tr><tr>
-                    <td colspan="2">  <button class="btn btn-primary w-75" type="submit" name="valider" value="Alimentaires">valider</button>
-                    </td> <td colspan="2"> <a class="btn btn-danger w-75" href="<?= site_url('users/acceuil');?>">annuler</a></td></tr>
+                    <td >  <button class="btn btn-primary " type="submit" name="valider" value="Alimentaires">valider</button>
+                    <a class="btn btn-danger " href="<?= site_url('users/acceuil');?>">annuler</a></td></tr>
                     <script type="text/javascript">
                       var element = document.getElementById('');
 element.onclick = function() {

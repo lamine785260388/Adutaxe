@@ -22,7 +22,7 @@ foreach($document->result() as $row){
           <div class="card">
           
             <div class="card-body">
-              <h1 class="card-title text-center">MES DECLARATIONS</h1>
+              <h1 class="card-title text-center">DECLARATIONS GERANT</h1>
  <div class="container my-3">
               <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#fullscreenModal">
                 Declaration administrative

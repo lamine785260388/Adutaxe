@@ -27,6 +27,13 @@ if($this->ion_auth->in_group("gerant")){
 
                   }
                  }
+                 foreach ($facture->result() as $row){
+                
+                
+                  $numerofact=$row->id;
+                
+                 
+                 }
      
    ?>
 
@@ -44,60 +51,80 @@ if($this->ion_auth->in_group("gerant")){
               </div>    
  <?php  };?></span>
       
-    </div><!-- End Page Title -->
+ </div><!-- End Page Title -->
 
-    <section class="section">
-      <div class="row">
-       
+   
 
 
-          <div class="card" id="imprimer">
-            <div class="card-body">
-              
-             
-              
-          
-         <table> 
-         <tr>   
-         <td>         
-      <img height='188px' width='530px'src="<?= base_url('assets/img/logo-adu.jpg');?>" class="rounded float-left" alt="..."></td><td></td>
-      <h4 class="rounded float-right">DGID-Ministere  des Finances </br>et du budget</h4>
-</td>
+<section class="section">
+  <div class="row">
+   
+     <div class="card" id="imprimer">
+        <div class="card-body">
+      
+     <table> 
+       <tr>   
+     <td>         
+  <img height="400px" width="500px"  src="<?= base_url('assets/img/logo-adu1.jpg');?>" class="rounded float-left img-fluid" alt="..."><td></td>
+  </td>
+        <h4 class="rounded float-right m-3 ">DGID-Ministere des Finances </br>et du budget</h4>
+
+
 </tr>
-<tr class="h-90 align-items-center">
+<tr class="h-100 align-items-center"><th></th> <th class="h-100 align-items-center" ><h5 class="text-center card-title"> </h5><h5 ><strong class="text-center "></strong></h5></th></tr>
+<tr>
+     <tr>   
+   <td>         
+ 
 
-<td></td>
-<td></td>
-<td></td>
+
+</tr>
+<tr class="h-100 align-items-center"><th></th> <th class="" ><h5 class="text-center card-title">Déclaration de Tva des produits </h5>
+         <h5 ><strong >Les informations personnelles du gérant</strong></h5><br>
+         <h4>-----------------------------------<h4>
+          <h3> N°&nbsp;facture&nbsp;<?= $numerofact;?><h3>
+</tr>
+    </table>
+           <?php
+           
+           $group="gerant"; if ($this->ion_auth->in_group($group)){
+              ;
+               } else{
+               
+               } 
+                foreach ($facture->result() as $row){
+                
+                  $nominf=$row->nomInfrastructure;
+                  $add=$row->adresse;
+                  $id=$row->idInfrastructure;
+                  $datefact=$row->Date;
+                  $numerofact=$row->id;
+                
+                 
+                 }
+                  ?>
+                  <table  class="table table-borderless py-1">
+
+<tr>
+  <td><span> <strong>Prenom gérant</strong>:<?= $prenom."   " ;?></span></td>
+  <td><span class="rounded float-right"><strong>Nom de l'infrastructure</strong>:<?= $nominf;?></span></td>
+</tr>
+<tr>
+
+  <td><span ><strong>Nom gérant</strong>:<?= $nom;?></span></td>
+  <td><span class="rounded float-right"><strong>adresse de l'nfrastructure</strong>:<?= $add;?></span></td><br>
 
 
-  <th class=" text-center" ><h5><strong>CEL SUR LA VALEUR LOCATIVE</strong></h5></th></tr>
-<tr> 
-  <?php if($this->ion_auth->in_group("gerant")){?>
-   <td> Prenom:<strong><?php echo " ".$prenom;?></strong></td>
-   
-   
-   </tr>
-  <tr>
-    <td>Nom:<strong><?php echo $nom;?></strong>  </td>
-  
 
-  
-    </tr>
-    <tr><td>Email:<strong><?php echo " ".$email;?></strong></td></tr>
-    <tr>  <td class="align-item:right;">telephone:<strong><?php echo " ".$tel;?></strong> </td></tr>
-  <?php };?><tr>
-  </tr>
-    <tr><td></td> <td colspan="3" > <h6>J'atteste que tous les informations fournies dans ce formulaire et ses annexes, le cas échéant, sont complétes et éxactes </h6></td></tr>
-  
-<tr><td></td></tr>
+</tr>
+<tr>
+<td><span class=""><strong>Email:</strong><?= $email ;?></span></td>
+  <td><span class="rounded float-right"><strong>Date facture</strong>:<?= $datefact;?></span></td>
+  <tr><td></td> <td colspan="3" > <h6>J'atteste que toutes les informations fournies dans ce formulaire et ses annexes, <br>le cas échéant, sont complétes et éxactes </h6></td></tr>
 
-       </table>
-       <div>
-         
-       </div>
-  
-             
+</tr>
+         </table>
+
              
               <!-- Active Table -->
               <table  class="table table-borderless">
@@ -146,6 +173,11 @@ if($this->ion_auth->in_group("gerant")){
         
                   <?php if($row->idliste==95){?>
                       <td> <strong> <?php echo $total1+$total2; ?></strong></td>
+
+                    <?php };?>
+                    <?php if($row->idliste==90){?>
+                      <td>  <?php echo 12;?></td>
+                      
                     <?php };?>
                     
                     

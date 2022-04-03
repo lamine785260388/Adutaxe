@@ -345,6 +345,7 @@ public function selectFacturecelvl($idinf,$date,$iduser){
 		$this -> db -> select ( '*' ); 
 $this -> db -> from ( 'infrastructuremarchande' ); 
 $this -> db -> join ( 'declarationselvl' ,  'declarationselvl.idInfrastructure=infrastructuremarchande.idInfrastructure' );
+$this -> db -> join('facture','facture.idDeclaration=declarationselvl.idDeclaration');
 $this -> db ->where ( 'infrastructuremarchande.id' ,  $iduser );
 $this -> db ->where ( 'declarationselvl.idInfrastructure' ,  $idinf );
 $this -> db ->where ( 'declarationselvl.Date' ,  $date);

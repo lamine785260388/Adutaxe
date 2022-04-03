@@ -35,7 +35,7 @@
           <div class="card" >
             <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
 
-              <img src="<?php echo base_url('assets/img/avatar.png');?>" alt="Profile" class="rounded-circle">
+              <img src="<?php echo base_url('assets/img/avatar.jpg');?>" alt="Profile" class="rounded-circle">
               <h2><?php echo $user->first_name." ".$user->last_name; ?> </h2>
               <h3><?= $titre ;?> </h3>
             </div>

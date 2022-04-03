@@ -64,7 +64,7 @@ $this->load->view('base/sidebar');?>
                 Evaluation
               </button>
                <?php };?>
-              <button type="button" class="btn btn-success modification" data-bs-toggle="modal" data-bs-target="#basicModal"
+              <button type="button" class="btn btn-warning modification" data-bs-toggle="modal" data-bs-target="#basicModal"
                        data-inf="<?= $row->idInfrastructure ; ?>" id="modification">
                <i title="modifier infrastructure" class="bi bi-pencil-square"></i>
               </button><?php if ($this->ion_auth->in_group("agent")){ ?>
@@ -108,8 +108,10 @@ $this->load->view('base/sidebar');?>
                   <div class="modal-content">
                     <div class="modal-header">
                       <div class="pt-4 pb-2">
-                    <h5 class="card-title text-center pb-1 fs-0"><i class="bi bi-bank2"></i>
-            </a>Ajout d'une infrastructure</h5>
+                    <h5 class="card-title text-center pb-1 fs-0" id="titreModal" >
+                    <i class='bi bi-bank2'></i>
+                      
+           </h5>
                     
                   </div>
                      
@@ -373,7 +375,7 @@ $this->load->view('base/sidebar');?>
                     <div class="modal-header">
                       <div class="pt-4 pb-2">
                     <h5 class="card-title text-center pb-1 fs-0"><i class="bi bi-bank2"></i>
-            </a>Ajout d'une infrastructure</h5>
+           </h5>
                     
                   </div>
                      
@@ -437,7 +439,8 @@ $this->load->view('base/sidebar');?>
 <script type="text/javascript">
   $(document).ready(function(){
     $('.mod').on('click',function(){
-
+      
+      document.getElementById("titreModal").innerHTML="<h5 class='text-center'><i class='bi bi-bank2'></i>Ajout Infrastructure </h5>";
       $('#nom').val($(this).attr('data-infrastructure'));
       document.getElementById('yourName').value = '';
        document.getElementById('adress').value = '';
@@ -449,7 +452,11 @@ $this->load->view('base/sidebar');?>
     });
 
     $('.modification').on('click',function(){
+
       document.getElementById('type').value = '';
+      document.getElementById('titreModal').value='Modification Inf';
+      document.getElementById("titreModal").innerHTML="<h5 class='text-center'><i class='bi bi-bank2'></i>Modification Infrastructure </h5>";
+
       var idinf = $(this).attr('data-inf');
       $.ajax({
         url:'<?php echo site_url('infrastructure/tests');  ?>',
