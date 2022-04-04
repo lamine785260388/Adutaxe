@@ -15,7 +15,7 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
   <!-- Favicons -->
-  <link href="<?php echo base_url('assets/assets/img/arrieree.png'); ?>" rel="icon">
+  <link href="<?php echo base_url('assets/assets/img/lokg.png'); ?>" rel="icon">
   <link href="<?php echo base_url('assets/assets/img/arriere.png');?>" rel="apple-touch-icon">
 
   <!-- Google Fonts -->

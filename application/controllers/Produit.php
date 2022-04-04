@@ -100,20 +100,70 @@ $declaration=1;
 	
 	 }
 	 if ($declaration==0){
-	 	$montantfacture=0;
+	 	$montantfacture=0;$ligneerreur=0;
+		 foreach ($prod->result() as $row ) {
+
+			$prix=$this->input->post('prix'.$row->codeCategorie);
+			$quantite=$this->input->post('quantite'.$row->codeCategorie);
+			$codeCategorie=$row->codeCategorie;
+			if(!empty($prix)){
+				$ligneerreur++;
+			   $this->fv->set_rules('prix'.$row->codeCategorie, 'prix à la ligne '.$ligneerreur, 'greater_than[99]',
+			   array('greater_than' => 'veuillez renseigner le champs  %s correctement le prix doit être supérieur à 99.')
+	   );
+	   $this->fv->set_rules('quantite'.$row->codeCategorie, 'quantite à la ligne '.$ligneerreur, 'greater_than[0.0099]',
+	   array('greater_than' => 'veuillez renseigner le champs  %s correctement la quantité doit être supérieur ou égale à 0,001.')
+	   );
+			}
+		   elseif(!empty($quantite)){
+			$ligneerreur++;
+			   $this->fv->set_rules('prix'.$row->codeCategorie, 'prix à la ligne '.$ligneerreur, 'greater_than[99]',
+			   array('greater_than' => 'veuillez renseigner le champs  %s correctement le prix doit être supérieur à 99.')
+	   );
+	   $this->fv->set_rules('quantite'.$row->codeCategorie, 'quantite à la ligne'.$ligneerreur, 'greater_than[0.0099]',
+	   array('greater_than' => 'veuillez renseigner le champs  %s correctement la quantité doit être supérieur ou égale à 0,001.')
+	   );
+	   
+		   }
+		 
+		}
+		if(!$this->fv->run()){
+			$data["user"]=$this->ion_auth->user()->row();
+			$group2="gerant";$group="agent";
+			if ($this->ion_auth->in_group($group2))
+			{
+		  $data['produit']=$this->md->selectproAtax();
+			$data["titre"]="gérant";
+			$data["groupe"]="gérant";
+			
+			$users=$this->ion_auth->user()->row();
+			$data["listinfrastructure"]=$this->md->selectcon("infrastructuremarchande","id",$users->id);
+			$this->load->view("gerant/DeclarationProduit",$data);
+		}
+			
+
+		   }
  foreach ($prod->result() as $row ) {
+
  	$prix=$this->input->post('prix'.$row->codeCategorie);
  	$quantite=$this->input->post('quantite'.$row->codeCategorie);
  	$codeCategorie=$row->codeCategorie;
+
+
+	 if($this->fv->run()){
+		
  	if($quantite>0 && $prix>0){
  		$this->md->insertProduit($id,$prix,$quantite,$codeCategorie,$type,$iddeclaration);
  		$selectfacture=$this->md->selectMontantfacture($id,$type);
  		foreach($selectfacture->result() as $fact){
              $montantfacture=$montantfacture+$fact->prixUnitaire*$fact->quantiteStock*$fact->tva;  
  		}
- 		$verif=1;
+ 		$verif=1; 
  	}
+ }
+ else{
 
+ }
 
 }
 }
@@ -139,18 +189,64 @@ $declaration=1;
 }
 	 }
 	 if ($declaration!=1){
+		$ligneerreur=0;
+		foreach ($prod->result() as $row ) {
+
+		   $prix=$this->input->post('prix'.$row->codeCategorie);
+		   $quantite=$this->input->post('quantite'.$row->codeCategorie);
+		   $codeCategorie=$row->codeCategorie;
+		   if(!empty($prix)){
+			   $ligneerreur++;
+			  $this->fv->set_rules('prix'.$row->codeCategorie, 'prix à la ligne '.$ligneerreur, 'greater_than[19.99]',
+			  array('greater_than' => 'veuillez renseigner le champs  %s correctement le prix doit être supérieur ou égale à 20.')
+	  );
+	  $this->fv->set_rules('quantite'.$row->codeCategorie, 'quantite à la ligne '.$ligneerreur, 'greater_than[0.9999]',
+	  array('greater_than' => 'veuillez renseigner le champs  %s correctement la quantité doit être supérieur ou égale à 1.')
+	  );
+		   }
+		  elseif(!empty($quantite)){
+		   $ligneerreur++;
+			  $this->fv->set_rules('prix'.$row->codeCategorie, 'prix à la ligne '.$ligneerreur, 'greater_than[19.99]',
+			  array('greater_than' => 'veuillez renseigner le champs  %s correctement le prix doit être supérieur ou égale à 20.')
+	  );
+	  $this->fv->set_rules('quantite'.$row->codeCategorie, 'quantite à la ligne'.$ligneerreur, 'greater_than[0.99999]',
+	  array('greater_than' => 'veuillez renseigner le champs  %s correctement la quantité doit être supérieur ou égale à 1.')
+	  );
+	  
+		  }
+		
+	   }
+	   if(!$this->fv->run()){
+		$data["user"]=$this->ion_auth->user()->row();
+		$group2="gerant";
+		if ($this->ion_auth->in_group($group2))
+		{
+	  $data['produit']=$this->md->selectproTtax();
+		$data["titre"]="gérant";
+		$data["groupe"]="gérant";
+		
+		$users=$this->ion_auth->user()->row();
+		$data["listinfrastructure"]=$this->md->selectcon("infrastructuremarchande","id",$users->id);
+		$this->load->view("gerant/DeclarationProduitTabac",$data);
+	}
+	   }
+	   $montantfacture=0;
  foreach ($prod->result() as $row ) {
  	$prix=$this->input->post('prix'.$row->codeCategorie);
  	$quantite=$this->input->post('quantite'.$row->codeCategorie);
- 	$codeCategorie=$row->codeCategorie;
+ 	$codeCategorie=$row->codeCategorie;	
+	
  	if($quantite>0 && $prix>0){
- 	
+		if($this->fv->run()){
+			
  		$this->md->insertProduit($id,$prix,$quantite,$codeCategorie,$type,$iddeclaration);
  		$selectfacture=$this->md->selectMontantfacture($id,$type);
  		foreach($selectfacture->result() as $fact){
              $montantfacture=$montantfacture+$fact->prixUnitaire*$fact->quantiteStock*$fact->tva;  
  		}
  		$verif=1;
+	}
+	
 
  	}
 
@@ -184,18 +280,62 @@ $declaration=1;
 	
 	 }
 	 if ($declaration!=1){
+		$ligneerreur=0;
+		foreach ($prod->result() as $row ) {
+
+		   $prix=$this->input->post('prix'.$row->codeCategorie);
+		   $quantite=$this->input->post('quantite'.$row->codeCategorie);
+		   $codeCategorie=$row->codeCategorie;
+		   if(!empty($prix)){
+			   $ligneerreur++;
+			  $this->fv->set_rules('prix'.$row->codeCategorie, 'prix à la ligne '.$ligneerreur, 'greater_than[99.99]',
+			  array('greater_than' => 'veuillez renseigner le champs  %s correctement le prix doit être supérieur ou égale à 100.')
+	  );
+	  $this->fv->set_rules('quantite'.$row->codeCategorie, 'quantite à la ligne '.$ligneerreur, 'greater_than[0.00099]',
+	  array('greater_than' => 'veuillez renseigner le champs  %s correctement la quantité doit être supérieur ou égale à 0.001.')
+	  );
+		   }
+		  elseif(!empty($quantite)){
+		   $ligneerreur++;
+			  $this->fv->set_rules('prix'.$row->codeCategorie, 'prix à la ligne '.$ligneerreur, 'greater_than[99.99]',
+			  array('greater_than' => 'veuillez renseigner le champs  %s correctement le prix doit être supérieur ou égale à 100.')
+	  );
+	  $this->fv->set_rules('quantite'.$row->codeCategorie, 'quantite à la ligne'.$ligneerreur, 'greater_than[0.00099]',
+	  array('greater_than' => 'veuillez renseigner le champs  %s correctement la quantité doit être supérieur ou égale à 0.0001.')
+	  );
+	  
+		  }
+		
+	   }
+	   if(!$this->fv->run()){
+		$data["user"]=$this->ion_auth->user()->row();
+		$group2="gerant";
+		if ($this->ion_auth->in_group($group2))
+		{
+	  $data['produit']=$this->md->selectproAlctax();
+		$data["titre"]="gérant";
+		$data["groupe"]="gérant";
+		
+		$users=$this->ion_auth->user()->row();
+		$data["listinfrastructure"]=$this->md->selectcon("infrastructuremarchande","id",$users->id);
+		$this->load->view("gerant/DeclarationProduitAlcool",$data);
+}
+
+	   }
+	   $montantfacture=0;
  foreach ($prod->result() as $row ) {
  	$prix=$this->input->post('prix'.$row->codeCategorie);
  	$quantite=$this->input->post('quantite'.$row->codeCategorie);
  	$codeCategorie=$row->codeCategorie;
  	if($quantite>0 && $prix>0 ){
+		 if($this->fv->run()){
  		$this->md->insertProduit($id,$prix,$quantite,$codeCategorie,$type,$iddeclaration);
  		$selectfacture=$this->md->selectMontantfactureAlcool($id,$type);
 
  		foreach($selectfacture->result() as $fact){
              $montantfacture=$montantfacture+($fact->prixUnitaire*$fact->quantiteStock*$fact->tva)+($fact->quantiteStock*$fact->tarif_litre);  
  		}
- 		$verif=1;
+ 		$verif=1;}
  	}
 
 

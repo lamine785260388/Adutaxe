@@ -12,6 +12,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="<?= base_url('assets/newlog/css/bootstrap.min.css');?>">
+    <link href="<?php echo base_url('assets/assets/img/lokg.png'); ?>" rel="icon">
     
     <!-- Style -->
     <link rel="stylesheet" href="<?= base_url('assets/newlog/css/style.css');?>">
