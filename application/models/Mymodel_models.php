@@ -230,7 +230,7 @@ public function insertFacture($inf,$montant,$iddec){
 	$data = array(
 		'id'=>".",
 		 'date'=>$date,
-        'Montant' => $montant,
+        'Montantfact' => $montant,
         'idInfrastructure' => $inf,
         'idDeclaration' => $iddec,
         'status' => "impaye"
@@ -450,7 +450,7 @@ $this->db->insert('messagerie', $data);
 
 }
 public function montant_taxe($etat){
-	$this->db->select_sum('Montant');
+	$this->db->select_sum('Montantfact');
 	$this -> db ->where ( 'status' ,  $etat );
  return $query = $this->db->get('facture'); 
 }
@@ -466,7 +466,7 @@ return $query= $this->db->get();
 //select *from infrastructuremarchande,produit,users where infrastructuremarchande.id=users.id and produit.idInfrastructure=infrastructuremarchande.idInfrastructure GROUP by type
 }
 public function MontantTaxesgerant($id){
-	$this->db->select_sum('Montant');
+	$this->db->select_sum('Montantfact');
 	$this->db->from('facture');
 	$this->db->join("infrastructuremarchande","facture.idinfrastructure=infrastructuremarchande.idinfrastructure") ;
 	$this -> db ->where ( 'status' ,  "paye" );
@@ -475,6 +475,18 @@ public function MontantTaxesgerant($id){
  return $query = $this->db->get(); 
 
 	//SELECT SUM(Montant) FROM facture WHERE status="paye" and facture.id=890516
+}
+public function selectdatevaluation($idinf){
+	$this -> db -> select ( 'dateEvaluation' ); 
+$this -> db -> from ( 'evaluation' ); 
+$this -> db ->where ( 'idinfrastructure' ,  $idinf);
+
+$this->db->order_by('idEvaluation', 'DESC');
+$this->db->limit(1);
+return $query  =  $this -> db -> get ();
+
+
+	//SELECT * FROM `evaluation` where idinfrastructure=48 ORDER by  idEvaluation desc LIMIT 1
 }
 
 }

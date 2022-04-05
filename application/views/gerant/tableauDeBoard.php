@@ -61,7 +61,7 @@ $this->load->view('base/sidebar');
                     </div>
                     <div class="ps-3">
                      
-                      <span style="font-size:25px;" class="text-success small pt-1 fw-bold"><?= $MontantTaxesgerant->Montant.' ';?>Fcfa</span> 
+                      <span style="font-size:25px;" class="text-success small pt-1 fw-bold"><?= $MontantTaxesgerant->Montantfact.' ';?>Fcfa</span> 
 
                     </div>
                   </div>

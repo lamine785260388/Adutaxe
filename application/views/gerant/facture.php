@@ -4,7 +4,7 @@ $this->load->view('base/navbar');
 $this->load->view('base/sidebar'); 
   foreach ($NumFacture->result() as $row){
                 $numfac=$row->id;
-                $montantfacture=$row->Montant;
+                $montantfacture=$row->Montantfact;
                }
                foreach ($facture->result() as $row){
                

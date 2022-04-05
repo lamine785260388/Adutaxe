@@ -97,8 +97,8 @@ else
 		$data["b"]="lamine";
 		$data["groupe"]="admin";
 		$data["nombreinf"]=$this->md->nombreInfrastructure();
-		$data["montant_taxe"]=$this->md->montant_taxe("paye")->row()->Montant;
-		$data["montant_taxeNonRegle"]=$this->md->montant_taxe("impaye")->row()->Montant;
+		$data["montant_taxe"]=$this->md->montant_taxe("paye")->row()->Montantfact;
+		$data["montant_taxeNonRegle"]=$this->md->montant_taxe("impaye")->row()->Montantfact;
 
 	
 			
@@ -158,7 +158,7 @@ foreach($nombreDeclaration->result() as $row){
 		foreach($agent as $row){
 			$data["nombreagent"]++;
 		}
-
+		$data["montant_taxe"]=$this->md->montant_taxe("paye")->row()->Montantfact;
 		 $this->load->view('base/main',$data,true);
      	$this->load->view('agent/tableaudeboard',$data);
      }

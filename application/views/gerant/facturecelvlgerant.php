@@ -79,7 +79,7 @@ if($this->ion_auth->in_group("gerant")){
 
 
 </tr>
-<tr class="h-100 align-items-center"><th></th> <th class="" ><h5 class="text-center card-title">Déclaration de Tva des produits </h5>
+<tr class="h-100 align-items-center"><th></th> <th class="" ><h5 class="text-center card-title">CEL SUR LA VALEUR LOCATIVE </h5>
          <h5 ><strong >Les informations personnelles du gérant</strong></h5><br>
          <h4>-----------------------------------<h4>
           <h3> N°&nbsp;facture&nbsp;<?= $numerofact;?><h3>

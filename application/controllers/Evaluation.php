@@ -44,21 +44,42 @@ class Evaluation extends My_controller
 			 $etat = $this->input->post('etat');
 			 $user=$this->ion_auth->user()->row();
 			
-
-			
+			 $dateinsert=$this->md->selectdatevaluation($idinf);$declaration=0;
+		
+			 foreach ($dateinsert->result() as $row ) {
+		$dateinsert=explode("-", $row->dateEvaluation);
+		$DateAndTime = date('Y-m');
+		$lam=$DateAndTime;
+		$iv=explode("-", $lam);
+		if($iv[0]==$dateinsert[0]){
+		$declaration=1;
+		}
+		  }
+		
+			if($declaration==0){
+				if($etat!="regle"){
+					$message="Votre infrastructure N° ".$idinf." n'est pas en régle";
+					$this->md->message($id,$message);
+				}
+				
 			 $this->md->insertevalue($etat,$doc,$id,$idinf,$user->id);
+			 
+			 $this->session->set_flashdata('message','Evaluation faite avec succés') ;
+			 
+			 redirect("infrastructure/listdesinfras");
+			}
+			 elseif($declaration==1){
+				$this->session->set_flashdata('message','Echec: Cet infrastructures a déja été évalué cette année') ;
+				redirect("infrastructure/listdesinfras");
+
+			 }
 			
 
 			 
-                    if($etat!="regle"){
-                    	$message="Votre infrastructure N° ".$idinf." n'est pas en régle";
-                    	$this->md->message($id,$message);
-                    }
-			 
-			 	redirect("infrastructure/listdesinfras");
+                   
 			 
 			 
-			 	 $this->session->set_flashdata('message','Evaluation faite avec succés') ;
+			 	
 			
 			 	
 

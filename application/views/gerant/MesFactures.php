@@ -69,7 +69,7 @@ $this->load->view('base/sidebar'); ?>
                    <td><?= $row->id;?></td>
                    <td><?= $row->nomInfrastructure;?></td>
                    <td><?= $row->date;?></td>
-                    <td><?= $row->Montant;?></td>
+                    <td><?= $row->Montantfact;?></td>
 
                    <td><a class =" btn btn-success" href="<?= site_url('gerant/paie').'/'.$row->id;?>"><i title=" payer" class="bi bi-cart3"></i></i></a></td>
 

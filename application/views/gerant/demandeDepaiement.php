@@ -10,8 +10,8 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="<?php echo base_url('assets/assets/img/favicon.png'); ?>" rel="icon">
-  <link href="<?php echo base_url('assets/assets/img/apple-touch-icon.png');?>" rel="apple-touch-icon">
+  <link href="<?php echo base_url('assets/assets/img/lokg.png'); ?>" rel="icon">
+  <link href="<?php echo base_url('assets/assets/img/lokg.png');?>" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.gstatic.com" rel="preconnect">
@@ -49,7 +49,7 @@
 
               <div class="d-flex justify-content-center py-4">
                 <a href="index.html" class="logo d-flex align-items-center w-auto">
-                  <img src="<?php echo base_url('assets/assets/img/arriere.png');?>" width="40" height="30" alt="logo alt="">
+                  <img src="<?php echo base_url('assets/assets/img/lokg.png');?>" width="40" height="30" alt="logo alt="">
                   <span class="d-none d-lg-block">Adutaxe!</span>
                 </a>
               </div><!-- End Logo -->

@@ -206,7 +206,26 @@ $declaration=1;
 foreach($a->result() as $row){
 	$iddeclaration=$row->idDeclaration;}
 	$iddeclaration=$iddeclaration+1;$i=0;$montant1=0;$montant2=0;
+	
 	 if($declaration==0){
+		foreach($liste->result() as $row){
+			$idliste=$row->idliste;
+        		$montant=$this->input->post($idliste);
+		if(!empty($montant)){
+			if($idliste==50){
+		   $this->fv->set_rules($idliste, 'Montant ligne 50', 'greater_than_equal_to[100]',
+		   array('greater_than_equal_to' => 'veuillez renseigner le champs  %s correctement le Montant doit être supérieur ou égale à 100')
+   );}
+  
+	$this->fv->set_rules($idliste, 'Montant', 'greater_than_equal_to[1]',
+	array('greater_than_equal_to' => 'veuillez renseigner les champs  %s correctement le Montant doit être supérieur ou égale à 1' )
+);
+	   
+ 
+  
+		}
+	}
+		 if($this->fv->run()){
         	foreach($liste->result() as $row){
         		$idliste=$row->idliste;
         		$montant=$this->input->post($idliste);
@@ -214,24 +233,48 @@ foreach($a->result() as $row){
         		
 
         		if($montant>0){
+            if(!empty($montant)){
         			      		 if($i==0){
                   $montant1=$montant;$i++;
           }else{
           	$montant3=$montant;
          $montant2=(($montant+$montant1)*0.5)*0.15;
  }
-
+ $this->session->set_flashdata('message','Déclaration faite avec succés pour plus de détail aller sur Déclaration puis Mes déclarations') ;
         			
         			$this->md->insertcel($inf,$ninea,$montant,$idliste,$iddeclaration);
+}
         			
         		}
 
         	}
+		}
+		else{
+			$data["user"]=$this->ion_auth->user()->row();
+			$group2="gerant";$group="agent";
+			
+		  $data['produit']=$this->md->selectproAtax();
+			$data["titre"]="gérant";
+			$data["groupe"]="gérant";
+			
+			$users=$this->ion_auth->user()->row();
+			$data["listinfrastructure"]=$this->md->selectcon("infrastructuremarchande","id",$users->id);
+		
+			$data["listedec"]=$this->md->select('listedéclarationselvl');
+	
+			
+			$this->session->set_flashdata('message','Une des Montants au minimum doit être supérieur à 0') ;
+
+				$this->load->view('gerant/Declarationcelvl',$data);
+
+		}
         	if($montant2>0){
+				$this->session->set_flashdata('message','Déclaration faite avec succés pour plus de détail aller sur Déclaration puis Mes déclarations') ;
         		$montantfacture=$montant2+(($montant1+$montant3)*0.15);
         		$this->md->insertFacture($inf,$montantfacture,$iddeclaration);
+				redirect("users/acceuil");
         	}
-        	redirect("users/acceuil");
+			
 
         }
         else{

@@ -52,7 +52,7 @@ $this->load->view('base/sidebar');
       <div class="card">
           
           <div class="card-body ">
-                            <h5 class="card-title byline">nombre d'agent</h5>
+                            <h5 class="card-title byline">Montant total des taxes</h5>
 
                   <div class="d-flex align-items-center">
                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
@@ -60,7 +60,7 @@ $this->load->view('base/sidebar');
                     </div>
                     <div class="ps-3">
                      
-                      <span style="font-size:25px;" class="text-success small pt-1 fw-bold"><?= $nombreagent;?></span> 
+                      <span style="font-size:25px;" class="text-success small pt-1 fw-bold"><?= $montant_taxe;?></span> 
 
                     </div>
                   </div>
@@ -69,33 +69,7 @@ $this->load->view('base/sidebar');
               </div>
           </div>
   </div>
-  <div class="row">
-    <div class="col-4">
-     <div class="card">
-          
-          <div class="card-body">
-                            <h5 class="card-title">Montant total des taxes</h5>
-
-                  <div class="d-flex align-items-center">
-                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                      <i style="font-size:25px;" class="bi bi-circle-fill"></i>
-                    </div>
-                    <div class="ps-3">
-                     
-                      <span style="font-size:25px;" class="text-success small pt-1 fw-bold">12%</span> 
-
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-    </div>
-     
-     
-      </div>
-   
-    </div>
-  </div>
+ 
   
 </div>
    
