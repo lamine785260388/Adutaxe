@@ -43,14 +43,15 @@ class Demande extends My_controller
          
 		$inf = $this->input->post('infrastucture');
 		$declaration=0;
+	
 		
-	$verificationDemande=$this->md->selectcon("paiement","NumFacture",$NumFacture);
-	foreach($verificationDemande->result() as $row){
-		if($row->NumFacture==$NumFacture){
-			$declaration=1;
-		}
+	$verificationDemande=$this->md->verifdeamandepaiement($NumFacture);
+	if(!$verificationDemande==0){
+		$declaration=1;
 
 	}
+
+	
 $user=$this->ion_auth->user()->row();
 		
 		$numeroP = $this->input->post('numeroP');
@@ -59,20 +60,19 @@ $user=$this->ion_auth->user()->row();
 		$datepaiement= date('Y-m-d'); 
 		$montant = $this->input->post('montant');
 
-$infras=$this->md->selectPro($inf);
 
-foreach ($infras->result() as $row) {
-if($inf==$row->idInfrastructure){
+
 	
 	if($declaration==0){
 		$verif=1;
-$this->session->set_flashdata('message','vous devez payer sur ce numéro: 785260388') ;
+		$this->md->DemandePaiement($inf,$user->id,$numeroP,$type,$datepaiement,$montant,$NumFacture);
+$this->session->set_flashdata('message',' Succés: vous devez payer sur ce numéro: 785260388') ;
 
 			redirect("gerant/MesFactures");}
-			
-}
-}
+
 if($declaration==1){
+	$this->session->set_flashdata('message',' Echec: vous avez déja fait une demande pour cette infrastructure') ;
+	redirect("gerant/MesFactures");
 	echo "vous avez déja fait une demande de paiement pour cette infrastructure";
 }
 		
@@ -80,3 +80,4 @@ if($declaration==1){
 		
 	}
 }
+

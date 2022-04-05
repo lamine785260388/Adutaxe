@@ -341,8 +341,9 @@ public function MesPaiement(){
 }
 public function paie($numfact){
 	$infofact=$this->md->selectcon("facture","id",$numfact);
+
 	foreach($infofact->result() as $row){
-	$data["montant_taxe"]=$row->Montant;
+	$data["montant_taxe"]=$row->Montantfact;
 	$data["inf"]=$row->idInfrastructure;
 	$data["datedemande"]=$row->date;
 	$data["numerofacture"]=$row->id;

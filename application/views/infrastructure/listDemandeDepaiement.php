@@ -7,7 +7,14 @@ $this->load->view('base/sidebar');?>
 
     <div class="pagetitle">
       <h1>listes des demande de paiement</h1>
-      
+     
+                  <?php if($this->session->message){;?>
+  <div class="alert alert-success alert-dismissible fade show" role="alert">
+    <h5 class="alert-heading"><?= $this->session->message;?> </h5>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">x </span>
+    </button>
+ <?php  };?>
     </div><!-- End Page Title -->
 
     <section class="section">

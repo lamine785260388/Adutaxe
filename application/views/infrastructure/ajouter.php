@@ -10,9 +10,9 @@ $this->load->view('base/header'); ?>
             <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
 
               <div class="d-flex justify-content-center py-4">
-                <a href="index.html" class="logo d-flex align-items-center w-auto">
-                  <img src="<?php echo base_url('assets/assets/img/arriere.png');?>" width="40" height="30" alt="logo alt="">
-                  <span class="d-none d-lg-block">ADUTAXE!</span>
+                <a href="<?= site_url('users/acceuil');?>" class="logo d-flex align-items-center w-auto">
+                  <img src="<?php echo base_url('assets/assets/img/lokg.png'); ?>" width="40" height="30" alt="logo alt="">
+                  <span class="d-none d-lg-block">ADUTAXE</span>
                 </a>
               </div><!-- End Logo -->
 

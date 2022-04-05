@@ -9,6 +9,7 @@ public function lam(){
 	return "lamine";
 }
 public function DemandePaiement($inf,$id,$numeroP,$type,$datepaiement,$montant,$numfact){
+	
 	$data = array(
         'idPaiement' => '.',
         'idinfrastructure' => $inf,
@@ -387,7 +388,7 @@ $this->db->update('paiement', $data);
 }
 public function messageValiadation($id,$Numfact){
 	$Date = date('Y-m-d'); 
-	$message="votre facture N°".$Numfact."a été validé";
+	$message="votre facture N°".$Numfact." a été validé";
 	$data = array(
         'idusers' => $id,
         'message' => $message,
@@ -487,6 +488,11 @@ return $query  =  $this -> db -> get ();
 
 
 	//SELECT * FROM `evaluation` where idinfrastructure=48 ORDER by  idEvaluation desc LIMIT 1
+}
+public function verifdeamandepaiement($NumFacture){
+	$this->db->query("select * from paiement where NumFacture=".$NumFacture);
+return $this->db->affected_rows();
+
 }
 
 }

@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Pages / Register - NiceAdmin Bootstrap Template</title>
+  <title>Adutaxe</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -47,12 +47,7 @@
           <div class="row justify-content-center">
             <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
 
-              <div class="d-flex justify-content-center py-4">
-                <a href="index.html" class="logo d-flex align-items-center w-auto">
-                  <img src="<?php echo base_url('assets/assets/img/lokg.png');?>" width="40" height="30" alt="logo alt="">
-                  <span class="d-none d-lg-block">Adutaxe!</span>
-                </a>
-              </div><!-- End Logo -->
+               
 
               <div class="card mb-3">
 
@@ -71,14 +66,14 @@
 
                       <label for="identification" class="form-label text-success">Veuillez Choisir Votre Infrastructure </label>
                       <select class="form-select" name="infrastucture">
-                      <?php foreach($info->result() as $row){ ?>
-                        <option value="<?= $row->idInfrastructure;?>" <?php if($inf!=$row->idInfrastructure){ echo "disabled='disabled'";} ;?>><?php echo "Nom: ".$row->nomInfrastructure."Adresse".$row->adresse ?></option>
+                      <?php $verif=0; foreach($info->result() as $row){ ?>
+                        <option value="<?= $row->idInfrastructure;?>" <?php if($inf!=$row->idInfrastructure){ echo "disabled='disabled'";}if($inf==$row->idInfrastructure){$verif=1;} ;?>><?php echo "Nom: ".$row->nomInfrastructure."Adresse".$row->adresse ?></option>
                       <?php };?>
                       </select>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-12">
                       <label for="numeropaiement" class="form-label">Numéro de paiement</label>
-                      <input type="Number" name="numeroP" class="form-control" id="numeroP" value="<?= $phone;?>" required>
+                      <input type="Number" name="numeroP" class="form-control" id="numeroP" value="<?= $phone;?>" >
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-12">
                       <label for="numeropaiement" class="form-label text-danger">Veuillez choisir le mode dde paiement Svp!</label>
@@ -91,17 +86,14 @@
                       </select>
                     </div>
                      <div class="col-xs-12 col-sm-12 col-md-12">
-                      <label for="numeropaiement" class="form-label">Numéro de paiement</label>
+                      
                       <input type="hidden" name="montant" value="<?= $montant_taxe;?>" required>
                     </div>
                      <div class="col-xs-12 col-sm-12 col-md-12">
 
                       <label for="identification" class="form-label text-success">Veuillez Choisir la date de déclaration </label>
-                      <select class="form-select" name="date">
-                      <?php foreach($date->result() as $row){ ?>
-                        <option value="<?= $row->date;?>" <?php if($row->date!=$datedemande){ echo "disabled='diseabled'";} ;?>><?php echo "Date: ".$row->date ?></option>
-                      <?php };?>
-                      </select>
+                      <input class="form-control" type="text" name="date" value="<?= $datedemande;?>" readonly>
+                     
                     </div>
       
 
@@ -110,7 +102,7 @@
                     
       
                     <div class="col-xs-6 col-sm-6 col-md-6">
-                      <button onclick="return numero();" style="background-color:green;" class="btn btn-primary w-100" type="submit">Valider</button>
+                      <button onclick="return numero();" style="background-color:green;" class="btn btn-primary w-100" type="submit" <?php if ($verif==0){ echo "disabled='diseabled'";} ;?>>Valider</button>
 
                     </div>
                     
@@ -147,7 +139,11 @@
 
   <!-- Template Main JS File -->
   <script src="<?php echo base_url('assets/assets/js/main.js');?>"></script>
-
+<script>
+  function numero(){
+    return confirm("veuillez payez sur le 785260388 votre facture");
+  }
+</script>
 </body>
 
 </html>

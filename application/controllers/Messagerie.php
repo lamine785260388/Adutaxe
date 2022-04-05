@@ -15,5 +15,7 @@ class Messagerie extends My_controller
 				$this->md->updatePaiementApresValidation($Numfact);
 				$this->md->messageValiadation($id,$Numfact);
 				$this->md->updatefacture($Numfact);
+				$this->session->set_flashdata('message','validation paiement faite avec succés') ;
+				redirect("infrastructure/listeDemandePaiement");
 			}
 }
