@@ -10,9 +10,9 @@ $this->load->view('base/header'); ?>
             <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
 
               <div class="d-flex justify-content-center py-4">
-                <a href="<?= site_url('users/acceuil');?>" class="logo d-flex align-items-center w-auto">
+                <a href="<?= site_url('users/acceuil');?>" class="logo d-flex align-items-center w-auto" style="text-decoration:none;">
                   <img src="<?php echo base_url('assets/assets/img/lokg.png'); ?>" width="40" height="30" alt="logo alt="">
-                  <span class="d-none d-lg-block">ADUTAXE</span>
+                  <span class="d-none d-lg-block">adutax</span>
                 </a>
               </div><!-- End Logo -->
 
@@ -23,7 +23,7 @@ $this->load->view('base/header'); ?>
                   <div class="pt-4 pb-2">
                     <h5 class="card-title text-center pb-1 fs-0"><i class="bi bi-bank2"></i>
             </a>Ajout d'une infrastructure</h5>
-                    <p class="text-center small"><strong>Veuillez saisir les informations de votre infrastructure</strong></p>
+                    <p class="text-center small"><strong>Veuillez saisir les informations de l'infrastructure</strong></p>
                   </div>
 
                   <form class="row g-3 needs-validation" method="POST" action="<?php echo site_url('gerant/do_upload'); ?>"

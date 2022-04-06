@@ -16,7 +16,7 @@ $this->load->view('base/sidebar');
 
                   <div class="d-flex align-items-center">
                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                      <i style="font-size: 25px;" class="bi bi-bank2"></i>
+                      <i style="font-size: 25px;" class="bi bi-shop"></i>
                     </div>
                     <div class="ps-3">
                       
@@ -36,7 +36,7 @@ $this->load->view('base/sidebar');
 
                   <div class="d-flex align-items-center">
                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                      <i style="font-size: 25px;" class="bi bi-list-check"></i>
+                      <i style="font-size: 25px;" class="bi bi-people-fill"></i>
                     </div>
                     <div class="ps-3">
                       
@@ -56,7 +56,7 @@ $this->load->view('base/sidebar');
 
                   <div class="d-flex align-items-center">
                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                      <i style="font-size:25px;" class="bi bi-circle-fill"></i>
+                      <i style="font-size:25px;" class="bi bi-calculator"></i>
                     </div>
                     <div class="ps-3">
                      
@@ -79,14 +79,14 @@ $this->load->view('base/sidebar');
   <!-- ======= Footer ======= -->
   <footer id="footer" class="footer">
     <div class="copyright">
-      &copy; Copyright <strong><span>MMTSSMD</span></strong>. All Rights Reserved
+      &copy; Copyright <strong><span>GRT</span></strong>
     </div>
     <div class="credits">
       <!-- All the links in the footer should remain intact. -->
       <!-- You can delete the links only if you purchased the pro version. -->
       <!-- Licensing information: https://bootstrapmade.com/license/ -->
       <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
-      Designed by <a href="#">MMTSSMD</a>
+      
     </div>
   </footer><!-- End Footer -->
 

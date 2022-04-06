@@ -40,7 +40,7 @@ $config = array(
                 'rules' => 'required|alpha',
                 'errors' => array(
                         'required' => 'Le %s est obligatoire .',
-                        'alpha' => 'Le %s ne doit pas contenir de caractére ni de chiffre .'
+                        'alpha' => 'Le %s ne doit pas contenir de caractéres ni de chiffre .'
 
                 ),
         ),
@@ -50,7 +50,7 @@ $config = array(
                 'rules' => 'required|alpha',
                 'errors' => array(
                         'required' => 'Le %s est obligatoire .',
-                        'alpha' => 'Le %s ne doit pas contenir de caractere .'
+                        'alpha' => 'Le %s ne doit pas contenir de caractéres .'
                 ),
         ),
          array(
@@ -75,9 +75,12 @@ $config = array(
            array(
                 'field' => 'numero',
                 'label' => 'numero',
-                'rules' => 'required|exact_length[9]',
+                'rules' => 'required|exact_length[9]|numeric',
                 'errors' => array(
                         'required' => 'Le %s est obligatoire .',
+						'exact_length' => 'Le %s doit contenir 9 chiffre exactement .',
+						 'numeric'=>'le %s doit contenir que des chiffres'
+						
 
                         
 
@@ -146,7 +149,8 @@ $this->fv->set_rules($config);
  	$this->load->view("login",$data);
 		}
  else{
- 	$this->session->set_flashdata('message','cette email a déja été enregistré') ;
+	
+ 	$this->session->set_flashdata('message','Echec inscription :cette email a déja été enregistré') ;
  	$this->load->view("inscription");
  }
 	

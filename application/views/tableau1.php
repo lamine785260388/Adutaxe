@@ -60,8 +60,9 @@ $this->load->view('base/sidebar');?>
                <i title="ajouter infrastructure" class="bi bi-plus-lg"></i>
               </button>
               <?php if($this->ion_auth->in_group("agent")){;?>
-              <button class="Evaluation" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#basicModal123" data-evaluation="<?= $row->idInfrastructure ; ?>">
-                Evaluation
+               
+              <button class="Evaluation" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#basicModal123" data-evaluation="<?= $row->idInfrastructure ; ?>" style="background-color:grey; color:white;">
+              <i class="bi bi-pencil"></i> Evaluation
               </button>
                <?php };?>
               <button type="button" class="btn btn-warning modification" data-bs-toggle="modal" data-bs-target="#basicModal"
@@ -183,7 +184,7 @@ $this->load->view('base/sidebar');?>
                 <div class="card-body">
 
                   <div class="pt-4 pb-2">
-                    <h5 class="card-title text-center pb-1 fs-0"><i class="bi bi-bank2"></i>
+                    <h5 class="card-title text-center pb-1 fs-0"><i class="bi bi-pencil"></i>
             </a>Evaluation</h5>
                     <p class="text-center small"><strong>Veuillez saisir les informations pour evaluer</strong></p>
                   </div>
@@ -206,12 +207,12 @@ $this->load->view('base/sidebar');?>
                     <div class="col-xs-6 col-sm-6 col-md-6">
                       <label for="etat" class="form-label"><strong>etat</strong></label>
                       <select name="etat" class="form-select">
-                        <option value="regle">regle</option>
-                        <option value="pas en regle">non regle</option> 
+                        <option value="regle">en régle</option>
+                        <option value="pas en regle">pas en régle</option> 
                       </select>
                     </div>
                     <div class="col-xs-6 col-sm-6 col-md-6">
-                      <label for="adresse" class="form-label"><strong>Document administrative</strong></label>
+                      <label for="adresse" class="form-label"><strong>Document administratif</strong></label>
                       <input type="file" name="userfile" size="20" class="form-control"   required>
                     </div>
 

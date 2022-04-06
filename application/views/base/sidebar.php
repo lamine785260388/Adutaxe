@@ -12,27 +12,27 @@
       <li class="nav-item" >
         <a class="nav-link collapsed" href="<?= site_url('Users/acceuil');?>">
           <i class="bi bi-person-fill" style="font-size:24px;" ></i>
-          <span>Profile</span>
+          <span>Profil</span>
         </a>
       </li><!-- End Dashboard Nav -->
       
- 
+      <?php if($this->ion_auth->is_admin()){?>
      <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#icons-nav34" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-calculator" style="font-size:24px;"></i><span>Gestion Taxes</span><i class="bi bi-chevron-down ms-auto"></i>
+          <i class="bi bi-menu-button-wide" style="font-size:24px;"></i><span>Gestion Taxe</span><i class="bi bi-chevron-down ms-auto"></i>
         </a> 
         <ul id="icons-nav34" class="nav-content collapse " data-bs-parent="#sidebar-nav">
          
          <li class="nav-item">
               <a class="nav-link collapsed" href="<?php echo site_url('Evaluation/ListeDesinfevalue');?>">
-              <i style="font-size:14px"; ></i><span style="font-size:14px;">listes des infrastrucures évalué</span>
+              <i style="font-size:14px"; ></i><span style="font-size:14px;">infrastrucures évaluées</span>
             </a>
           </li>
-          <?php if($this->ion_auth->is_admin()){?>
+         
             <li  class="nav-item" >
               <a class="nav-link collapsed" href="<?php echo site_url('infrastructure/listeDemandePaiement');?>">
             
-              <i class="fa fa-currency-euro" style="font-size: 59px"></i><span >liste des demandes de paiement</span>
+              <i class="fa fa-currency-euro" style="font-size: 59px"></i><span >les demandes de paiement</span>
             </a>
           </li>
           <li  class="nav-item" >
@@ -41,14 +41,14 @@
               <i class="fa fa-currency-euro" style="font-size: 59px"></i><span >Paiement validé</span>
             </a>
           </li>
-           <?php };?>
+           
           
 
           
 
         </ul>
       </li>
-  
+      <?php };?>
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
@@ -111,7 +111,7 @@
       <li class="nav-item" >
         <a class="nav-link collapsed active" href="<?= site_url('Users/acceuil');?>">
           <i class="bi bi-person-fill" style="font-size:24px;" ></i>
-          <span>Profile</span>
+          <span>Profil</span>
         </a>
       </li><!-- End Dashboard Nav -->
       <li class="nav-item">

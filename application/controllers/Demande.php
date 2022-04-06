@@ -66,12 +66,12 @@ $user=$this->ion_auth->user()->row();
 	if($declaration==0){
 		$verif=1;
 		$this->md->DemandePaiement($inf,$user->id,$numeroP,$type,$datepaiement,$montant,$NumFacture);
-$this->session->set_flashdata('message',' Succés: vous devez payer sur ce numéro: 785260388') ;
+$this->session->set_flashdata('message',' Votre Demande de paiement est enregistrée, vous devez payer sur ce numéro: 785260388') ;
 
 			redirect("gerant/MesFactures");}
 
 if($declaration==1){
-	$this->session->set_flashdata('message',' Echec: vous avez déja fait une demande pour cette infrastructure') ;
+	$this->session->set_flashdata('message',' Echec: vous avez déja fait une demande de paiement pour cette infrastructure') ;
 	redirect("gerant/MesFactures");
 	echo "vous avez déja fait une demande de paiement pour cette infrastructure";
 }

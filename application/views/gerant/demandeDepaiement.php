@@ -54,8 +54,14 @@
                 <div class="card-body">
 
                   <div class="pt-4 pb-2">
-                    <h5 class="card-title text-center pb-0 fs-4">Demande de paiement</h5>
-                    <p class="text-center small">Entrer vos informations de paiement!
+                   
+                    <div class="d-flex justify-content-center py-4">
+                <a href="<?= site_url("users/acceuil")?>" class="logo d-flex align-items-center w-auto">
+                  <img src="<?php echo base_url('assets/assets/img/Lokg.png');?>" width="40" height="30" alt="logo">
+                  <span class="d-none d-lg-block">adutax</span>
+                </a>
+              </div><!-- End Logo -->
+                    <p class="text-center card-title">Demande de paiement
                       
                     </p>
                   </div>
@@ -64,7 +70,7 @@
                    
                     <div class="col-xs-12 col-sm-12 col-md-12">
 
-                      <label for="identification" class="form-label text-success">Veuillez Choisir Votre Infrastructure </label>
+                      <label for="identification" class="form-label text-dark">Veuillez Choisir Votre Infrastructure </label>
                       <select class="form-select" name="infrastucture">
                       <?php $verif=0; foreach($info->result() as $row){ ?>
                         <option value="<?= $row->idInfrastructure;?>" <?php if($inf!=$row->idInfrastructure){ echo "disabled='disabled'";}if($inf==$row->idInfrastructure){$verif=1;} ;?>><?php echo "Nom: ".$row->nomInfrastructure."Adresse".$row->adresse ?></option>
@@ -72,11 +78,11 @@
                       </select>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-12">
-                      <label for="numeropaiement" class="form-label">Numéro de paiement</label>
+                      <label for="numeropaiement" class="form-label text-dark">Numéro de paiement</label>
                       <input type="Number" name="numeroP" class="form-control" id="numeroP" value="<?= $phone;?>" >
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-12">
-                      <label for="numeropaiement" class="form-label text-danger">Veuillez choisir le mode dde paiement Svp!</label>
+                      <label for="numeropaiement" class="form-label text-dark">Veuillez choisir votre mode de paiement Svp!</label>
                       <select class="form-select" name="operateur">
                         <option value="wave">wave</option>
                          <option value="OrangeMoney">OrangeMoney</option>
@@ -91,7 +97,7 @@
                     </div>
                      <div class="col-xs-12 col-sm-12 col-md-12">
 
-                      <label for="identification" class="form-label text-success">Veuillez Choisir la date de déclaration </label>
+                      <label for="identification" class="form-label text-dark"> Date de déclaration </label>
                       <input class="form-control" type="text" name="date" value="<?= $datedemande;?>" readonly>
                      
                     </div>
@@ -141,7 +147,7 @@
   <script src="<?php echo base_url('assets/assets/js/main.js');?>"></script>
 <script>
   function numero(){
-    return confirm("veuillez payez sur le 785260388 votre facture");
+    return confirm("Toutes vos informations sont t'il correct");
   }
 </script>
 </body>

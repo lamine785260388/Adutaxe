@@ -7,6 +7,15 @@ $this->load->view('base/header'); ?>
 
     
     <div class="pagetitle">
+    <?php if($this->session->message){;?>
+  <div class="alert alert-success alert-dismissible fade show" role="alert">
+    <h5 class="alert-heading"><?= $this->session->message;?> </h5>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">x </span>
+    </button>
+  </div>
+ <?php  };?>
+      
               <?php if(validation_errors()){;?>
   <div class="alert alert-danger alert-dismissible fade show" role="alert">
     <h5 class="alert-heading"><?= validation_errors();?> </h5>
@@ -15,7 +24,7 @@ $this->load->view('base/header'); ?>
     </button>
  <?php  };?>
       
-    </div>
+    </div></div>
     <div class="container-fluide">
 
       <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4 ">
@@ -24,9 +33,9 @@ $this->load->view('base/header'); ?>
             <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
 
               <div class="d-flex justify-content-center py-4">
-                <a href="index.html" class="logo d-flex align-items-center w-auto">
-                  <img src="<?php echo base_url('assets/assets/img/arriere.png');?>" width="40" height="30" alt="logo">
-                  <span class="d-none d-lg-block">Adutaxe!</span>
+                <a href="<?= site_url("users/acceuil")?>" class="logo d-flex align-items-center w-auto" style="text-decoration: none;">
+                  <img src="<?php echo base_url('assets/assets/img/Lokg.png');?>" width="40" height="30" alt="logo">
+                  <span class="d-none d-lg-block">adutax</span>
                 </a>
               </div><!-- End Logo -->
 
@@ -37,13 +46,13 @@ $this->load->view('base/header'); ?>
 
                   <div class="pt-4 pb-2">
                     <h5 class="card-title text-center pb-0 fs-4">Créer votre compte</h5>
-                    <p class="text-center small">Entrer vos informations personnel</p>
+                    <p class="text-center small">Entrer vos informations personnelles</p>
                   </div>
 
                   <form class="row g-3 needs-validation" method="POST" action="<?php echo site_url('connexion/inscription');?>" novalidate>
                     
                     <div class="col-xs-6 col-sm-6 col-md-6">
-                      <label for="yourName" class="form-label">votre nom</label>
+                      <label for="yourName" class="form-label">nom</label>
                       <input type="text" name="nom" class="form-control" id="yourName" value="<?= set_value('nom')?>" required>
                     </div>
                     <div class="col-xs-6 col-sm-6 col-md-6">
@@ -51,7 +60,7 @@ $this->load->view('base/header'); ?>
                       <input type="text" name="prenom" class="form-control" id="prenom" value="<?= set_value('nom')?>" required>
                     </div>
                     <div class="col-xs-6 col-sm-6 col-md-6">
-                      <label for="nomUtilisateur" class="form-label">Adress</label>
+                      <label for="nomUtilisateur" class="form-label">Adresse</label>
                       <input type="text" name="nomUtilisateur" class="form-control" id="nomuser" value="<?= set_value('nomUtilisateur')?>" required>
                     </div>
     

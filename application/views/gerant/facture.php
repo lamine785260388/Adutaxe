@@ -48,13 +48,13 @@ $this->load->view('base/sidebar');
 <tr class="h-100 align-items-center"><th></th> <th class="" ><h5 class="text-center card-title">Déclaration de Tva des produits <?php if($type=="Tabac"){ echo "Tabagiques";}else echo "Alimentaires" ;?></h5>
          <h5 ><strong >Les informations personnelles du gérant</strong></h5><br>
          <h4>-----------------------------------<h4>
-          <h3> N°&nbsp;facture&nbsp;<?=$numfac;?><h3>
+          <h3> N°&nbsp;facture&nbsp;<?=': '.$numfac;?><h3>
 </tr>
     </table>
            <?php
            
            $group="gerant"; if ($this->ion_auth->in_group($group)){
-                echo "<span class='text-success'>Vos Informations personnelle</span></br>";
+               
                } else{
                
                } 
