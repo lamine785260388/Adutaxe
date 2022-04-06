@@ -168,7 +168,8 @@ $declaration=1;
 }
 }
 else{
-	echo "vous avez déja fait une déclaration de produit Alimentaire pour cette infrastructure dans ce mois<a href=".site_url('produit/listproduit')."> cliquez pour revenire à la page précédente</a>";
+	$this->session->set_flashdata('message','vouz avez déja fait une déclaration de tva de produit alimentaire pour ce mois de cette infrastructure') ;
+	redirect("users/acceuil");
 }
 if($verif==1){
 	$this->md->insertFacture($id,$montantfacture,$iddeclaration);
@@ -254,7 +255,8 @@ $declaration=1;
 }
 }
 else{
-	echo "vous avez déja fait une déclaration de produit Tabagisme pour cette infrastructure <a href=".site_url('produit/listproduit').">cliquez pour revenire à la page précédente</a>";
+	$this->session->set_flashdata('message','vouz avez déja fait une déclaration de tva de produit tabagique pour ce mois de cette infrastructure') ;
+	redirect("users/acceuil");
 }
 if($verif==1){
 	$this->md->insertFacture($id,$montantfacture,$iddeclaration);
@@ -342,7 +344,8 @@ $declaration=1;
 }
 }
 else{
-	echo "vous avez déja fait une déclaration de produit Alcoolique pour ce mois-ci infrastructure dans ce mois<a href=".site_url('produit/listproduit')."> cliquez pour revenire à la page précédente</a>";
+	$this->session->set_flashdata('message','vouz avez déja fait une déclaration de tva de produit alcoolique pour ce mois de cette infrastructure') ;
+	redirect("users/acceuil");
 }
 if($verif==1){
 	$Date = date('Y-m-d'); 

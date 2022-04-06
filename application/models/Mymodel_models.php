@@ -494,6 +494,11 @@ public function verifdeamandepaiement($NumFacture){
 return $this->db->affected_rows();
 
 }
+public function verificationSaisiefacture($NumFacture){
+	$this->db->query("select * from facture where id=".$NumFacture);
+	return $this->db->affected_rows();
+
+}
 
 }
 ?>

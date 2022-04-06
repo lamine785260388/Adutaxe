@@ -40,6 +40,18 @@
 <body>
 
   <main>
+  <div class="pagetitle">
+      
+      <span>  <?php if($this->session->message){;?>
+   
+
+       
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+               <?= $this->session->message;?>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>    
+ <?php  };?></span>
+    </div><!-- End Page Title -->
     <div class="container">
 
       <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
@@ -108,7 +120,7 @@
                     
       
                     <div class="col-xs-6 col-sm-6 col-md-6">
-                      <button onclick="return numero();" style="background-color:green;" class="btn btn-primary w-100" type="submit" <?php if ($verif==0){ echo "disabled='diseabled'";} ;?>>Valider</button>
+                      <button onclick="return numero();" style="background-color:green;" class="btn btn-primary w-100" type="submit" <?php if ($verif==0){ echo "disabled='diseabled'";} ; ?>>Valider</button>
 
                     </div>
                     

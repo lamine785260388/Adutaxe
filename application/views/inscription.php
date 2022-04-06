@@ -52,41 +52,41 @@ $this->load->view('base/header'); ?>
                   <form class="row g-3 needs-validation" method="POST" action="<?php echo site_url('connexion/inscription');?>" novalidate>
                     
                     <div class="col-xs-6 col-sm-6 col-md-6">
-                      <label for="yourName" class="form-label">nom</label>
-                      <input type="text" name="nom" class="form-control" id="yourName" value="<?= set_value('nom')?>" required>
+                      <label for="yourName" class="form-label"></label>
+                      <input type="text" name="nom" class="form-control" id="yourName" value="<?= set_value('nom')?>" placeholder="Votre nom" required>
                     </div>
                     <div class="col-xs-6 col-sm-6 col-md-6">
-                      <label for="prenom" class="form-label">Prenom</label>
-                      <input type="text" name="prenom" class="form-control" id="prenom" value="<?= set_value('nom')?>" required>
+                      <label for="prenom" class="form-label"></label>
+                      <input type="text" name="prenom" class="form-control" id="prenom" value="<?= set_value('nom')?>" placeholder="Votre prenom" required>
                     </div>
                     <div class="col-xs-6 col-sm-6 col-md-6">
-                      <label for="nomUtilisateur" class="form-label">Adresse</label>
-                      <input type="text" name="nomUtilisateur" class="form-control" id="nomuser" value="<?= set_value('nomUtilisateur')?>" required>
+                      <label for="nomUtilisateur" class="form-label"></label>
+                      <input type="text" name="nomUtilisateur" class="form-control" id="nomuser" value="<?= set_value('nomUtilisateur')?>" placeholder="votre Adresse" required>
                     </div>
     
                     <div class="col-xs-6 col-sm-6 col-md-6">
-                      <label for="numero" class="form-label">votre numéro</label>
-                      <input type="number" name="numero" class="form-control" id="numero" value="<?= set_value('numero')?>" required>
+                      <label for="numero" class="form-label"></label>
+                      <input type="number" name="numero" class="form-control" id="numero" value="<?= set_value('numero')?>" placeholder="votre numéro" required>
                     </div>
                     <div class="col-xs-6 col-sm-6 col-md-6">
-                      <label for="Nom d'utilisateur" class="form-label">votre email</label>
+                      <label for="Nom d'utilisateur" class="form-label"></label>
                       <div class="input-group has-validation">
                         <span class="input-group-text" id="inputGroupPrepend">@</span>
-                        <input type="email" name="email" class="form-control" id="yourUsername" value="<?= set_value('email')?>" required>
+                        <input type="email" name="email" class="form-control" id="yourUsername" value="<?= set_value('email')?>" placeholder="Votre email" required>
                       
                       </div>
                       
                     </div><br>
 
                     <div class="col-xs-6 col-sm-6 col-md-6">
-                      <label for="passe" class="form-label">mot de passe</label>
-                      <input type="password" name="passe" class="form-control" id="yourPassword" value="<?= set_value('passe')?>" required>
+                      <label for="passe" class="form-label"></label>
+                      <input type="password" name="passe" class="form-control" id="yourPassword" value="<?= set_value('passe')?>" placeholder="mot de passe" required>
                     </div>
 
 
                     <div class="col-xs-6 col-sm-6 col-md-6">
-                      <label for="confirmation" class="form-label">confirmation de mot de passe</label>
-                      <input type="password" name="confirmation" class="form-control" id="confirmation" value="" required>
+                      <label for="confirmation" class="form-label"></label>
+                      <input type="password" name="confirmation" class="form-control" id="confirmation" value="" placeholder="confirmation de mot de passe" required>
                     </div>
 
                    
@@ -95,8 +95,8 @@ $this->load->view('base/header'); ?>
                     <div class="col-xs-6 col-sm-6 col-md-6">
                       <p class="small mb-0 text-danger">vous avez déja un compte? <a href="<?= site_url('redirect/login');?>">Se connecter</a></p>
                     </div>
-                    <div class="col-xs-6 col-sm-6 col-md-6">
-                      <button class="btn btn-primary w-100" type="submit">valider</button>
+                    <div class="col-xs-12 col-sm-12 ">
+                      <button class="btn btn-primary w-100 text-center" type="submit">valider</button>
                     </div>
                     
                   </form>

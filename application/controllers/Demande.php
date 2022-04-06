@@ -39,6 +39,11 @@ class Demande extends My_controller
 	}
 	public function InsertDemandePaiement()
 	{
+		
+		$this->fv->set_rules('numeroP', 'Numero de paiement', 'exact_length[9]|numeric',
+		array('exact_length' => 'Le %s de  doit contenir 9 chiffres exactement pas plus ni moin')
+		);
+		if($this->fv->run()){
 		$NumFacture=$this->input->post("numfact");
          
 		$inf = $this->input->post('infrastucture');
@@ -79,5 +84,8 @@ if($declaration==1){
 		
 		
 	}
+	$this->session->set_flashdata('message','Echec: Demande de paiement le numéro doit contenir exactement 9 chiffre et ne pas comporter de caractéres');
+	redirect('users/acceuil');
+}
 }
 

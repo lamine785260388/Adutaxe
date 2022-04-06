@@ -78,7 +78,7 @@ $config = array(
                 'rules' => 'required|exact_length[9]|numeric',
                 'errors' => array(
                         'required' => 'Le %s est obligatoire .',
-						'exact_length' => 'Le %s doit contenir 9 chiffre exactement .',
+						'exact_length' => 'Le %s doit contenir 9 chiffres exactement .',
 						 'numeric'=>'le %s doit contenir que des chiffres'
 						
 

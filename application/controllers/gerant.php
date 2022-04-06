@@ -341,6 +341,8 @@ public function MesPaiement(){
 }
 public function paie($numfact){
 	$infofact=$this->md->selectcon("facture","id",$numfact);
+	$verificationfact=$this->md->verificationSaisiefacture($numfact);
+	if($verificationfact>0){
 
 	foreach($infofact->result() as $row){
 	$data["montant_taxe"]=$row->Montantfact;
@@ -359,6 +361,11 @@ public function paie($numfact){
        $data["info"]=$this->md->selectcon("infrastructuremarchande","id",$user->id);
        
  $this->load->view('gerant/demandeDepaiement',$data);
+}
+else {
+	$this->session->set_flashdata('message','Accés refusé');
+redirect('users/acceuil');
+}
 }
 public function facturecelvl($idinf,$date){
 	$data["user"]=$this->ion_auth->user()->row();
@@ -414,8 +421,8 @@ $data["groupe"]="agent";
 
                             if ($this->email->send()) {
 
-                                $this->session->set_flashdata('success','Email Send sucessfully');
-                               // return redirect('users/acceuil');
+                                $this->session->set_flashdata('success','Email envoyé avec succés');
+                               return redirect('users/acceuil');
                             } 
 		}
       

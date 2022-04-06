@@ -110,7 +110,7 @@ $this->load->view('base/sidebar');?>
                     <div class="modal-header">
                       <div class="pt-4 pb-2">
                     <h5 class="card-title text-center pb-1 fs-0" id="titreModal" >
-                    <i class='bi bi-bank2'></i>
+                    <i class='bi bi-shop'></i>
                       
            </h5>
                     
@@ -148,7 +148,7 @@ $this->load->view('base/sidebar');?>
                       </select>
                     </div>
                     <div class="col-xs-6 col-sm-6 col-md-6">
-                      <label for="adresse" class="form-label"><strong>Document administrative</strong></label>
+                      <label for="adresse" class="form-label"><strong>Document administratif</strong></label>
                       <input type="file" name="userfile" size="20" class="form-control"   required>
                     </div>
 
@@ -252,7 +252,7 @@ $this->load->view('base/sidebar');?>
                   <div class="modal-content">
                     <div class="modal-header">
                       <div class="pt-4 pb-2">
-                    <h5 class="card-title text-center pb-1 fs-0"><i class="bi bi-bank2"></i>
+                    <h5 class="card-title text-center pb-1 fs-0"><i class="bi bi-shop"></i>
             </a>Ajout d'une gg</h5>
                     
                   </div>
@@ -289,7 +289,7 @@ $this->load->view('base/sidebar');?>
                       </select>
                     </div>
                     <div class="col-xs-6 col-sm-6 col-md-6">
-                      <label for="adresse" class="form-label"><strong>Document administrative</strong></label>
+                      <label for="adresse" class="form-label"><strong>Document administratif</strong></label>
                       <input type="file" name="userfile" size="20" class="form-control"   required>
                     </div>
 
@@ -343,7 +343,7 @@ $this->load->view('base/sidebar');?>
                       </select>
                     </div>
                     <div class="col-xs-6 col-sm-6 col-md-6">
-                      <label for="adresse" class="form-label"><strong>Document administrative</strong></label>
+                      <label for="adresse" class="form-label"><strong>Document administratif</strong></label>
                       <input type="file" name="userfile" size="20" class="form-control"   required>
                     </div>
 
@@ -441,7 +441,7 @@ $this->load->view('base/sidebar');?>
   $(document).ready(function(){
     $('.mod').on('click',function(){
       
-      document.getElementById("titreModal").innerHTML="<h5 class='text-center'><i class='bi bi-bank2'></i>Ajout Infrastructure </h5>";
+      document.getElementById("titreModal").innerHTML="<h5 class='text-center'><i class='bi bi-shop'></i>Ajout Infrastructure </h5>";
       $('#nom').val($(this).attr('data-infrastructure'));
       document.getElementById('yourName').value = '';
        document.getElementById('adress').value = '';
@@ -456,7 +456,7 @@ $this->load->view('base/sidebar');?>
 
       document.getElementById('type').value = '';
       document.getElementById('titreModal').value='Modification Inf';
-      document.getElementById("titreModal").innerHTML="<h5 class='text-center'><i class='bi bi-bank2'></i>Modification Infrastructure </h5>";
+      document.getElementById("titreModal").innerHTML="<h5 class='text-center'><i class='bi bi-shop'></i>Modification Infrastructure </h5>";
 
       var idinf = $(this).attr('data-inf');
       $.ajax({
